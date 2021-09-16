@@ -1,0 +1,30 @@
+<form class="formWrapper">
+    <div class="item">
+        <label for="mobileName">Mobile Name : </label>
+        <input type="text" name="mobileName" id="mobileName">
+    </div>
+    <div class="item">
+        <label for="ram">RAM : </label>
+        <input type="number" name="ram" id="ram">
+    </div>
+    <div class="item">
+        <label for="rom">ROM : </label>
+        <input type="number" name="rom" id="rom">
+    </div>
+    <div class="item">
+        <label for="color">Color : </label>
+        <input type="text" name="color" id="color">
+    </div>
+    <div class="item">
+        <label for="display">Display Size : </label>
+        <input type="text" name="display" id="display">
+    </div>
+    <div class="item">
+        <label for="processor">Processor : </label>
+        <input type="text" name="processor" id="processor">
+    </div>
+    <div class="buttons">
+        <button type="submit" (click)="addCard($event)" class="submit">Submit</button>
+        <button type="reset" class="reset">Reset</button>
+    </div>
+</form>

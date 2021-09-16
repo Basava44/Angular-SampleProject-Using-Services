@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MobileServices } from '../mobile-data.service';
+import { MobileServices } from '../../mobile-data.service';
 
 @Component({
   selector: 'app-header',

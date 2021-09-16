@@ -4,7 +4,7 @@ import {
   ViewChild,
   ElementRef,
 } from '@angular/core';
-import { MobileServices } from '../mobile-data.service';
+import { MobileServices } from '../../mobile-data.service';
 
 @Component({
   selector: 'app-mobile-card',

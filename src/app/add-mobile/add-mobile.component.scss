@@ -1,0 +1,58 @@
+.formWrapper{
+    padding: 20px 30px;
+    border: 2px solid black;
+    background-color: rgb(248, 248, 248);
+    margin: 15px auto;
+    border-radius: 8px;
+    width: 380px;
+}
+
+.item{
+    margin: 20px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+input{
+    height: 25px;
+    width: 200px;
+    border-top: none; 
+    border-left: none; 
+    border-right: none;
+    background-color: transparent;
+}
+
+input:focus-visible{
+    border-color: transparent;
+}
+
+button{
+    margin: 5px 10px;
+    padding: 8px;
+    width: 70px;
+    border-radius: 10px;
+    border: 1px solid black;
+    font-size: 14px;
+}
+
+.submit:hover{
+    font-weight: bold;
+    background-color: rgba(0, 255, 0, 0.589);
+    color: black;
+}
+
+.reset:hover{
+    font-weight: bold;
+    background-color: rgba(255, 0, 0, 0.76);
+    color: black;
+}
+
+label{
+    font-weight: bold;
+    margin-top: 3px;
+}
+
+.buttons{
+    display: flex;
+    justify-content: flex-end;
+}

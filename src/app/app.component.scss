@@ -1,14 +1,37 @@
-.mainwrapper{
-    max-width: 900px;
-    margin: 0 auto;
+.navbar{
+    background-color: rgb(78, 77, 76);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
-.cardContainer{
-    display: grid;
-    grid-template-columns: auto auto;
+.navbar ul{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: flex-end;
+    align-items: center;
 }
 
-.nocards{
-    font-size: 20px;
-    margin-left: 10px;
+.navbar ul li{
+    padding: 15px;
+    margin: 0 10px;
+}
+
+.navbar ul li a{
+    cursor: pointer;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.navbar ul li a:hover{
+    font-weight: bold;
+}
+
+.active{
+   border-bottom: 3px solid white;
+}
+
+h1{
+    color: white;
 }

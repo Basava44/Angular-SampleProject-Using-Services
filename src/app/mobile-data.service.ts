@@ -1,4 +1,4 @@
-import { Subject } from "rxjs";
+import { Subject } from 'rxjs';
 
 export class MobileServices {
   devices = [
@@ -77,9 +77,9 @@ export class MobileServices {
   ];
 
   head = {
-    name:"Mobile",
-    amount:"Price",
-  }
+    name: 'Mobile',
+    amount: 'Price',
+  };
 
   private _headerData = new Subject<any>();
   headerData$ = this._headerData.asObservable();
@@ -91,9 +91,8 @@ export class MobileServices {
   count$ = this._count.asObservable();
 
   delete(data: any) {
-    if(this.head.name == data.name)
-    {
-      this.updateHeader("Mobile","Price");
+    if (this.head.name == data.name) {
+      this.updateHeader('Mobile', 'Price');
     }
     this.devices = this.devices.filter((mobile) => {
       return mobile != data;
@@ -107,5 +106,4 @@ export class MobileServices {
     this.head.name = name;
     this._headerData.next(this.head);
   }
-
 }
