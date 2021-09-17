@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { MobileServices } from '../../mobile-data.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { MobileServices } from '../../mobile-data.service';
 export class CountComponent implements OnInit {
   count:number = 0;
 
-  constructor(private Data:MobileServices){
+  constructor(private Data:MobileServices, private route:Router){
     this.count = this.Data.devices.length;
   }
 
@@ -17,6 +18,10 @@ export class CountComponent implements OnInit {
     this.Data.count$.subscribe(
       data => {this.count = data}
     )
+  }
+
+  ToAddMobile(){
+    this.route.navigate(['/addmobile']);
   }
 
 }

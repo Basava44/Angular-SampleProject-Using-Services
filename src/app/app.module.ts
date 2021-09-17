@@ -7,13 +7,13 @@ import { AppComponent } from './app.component';
 import { CountComponent } from './mobile-cards/count/count.component';
 import { HeaderComponent } from './mobile-cards/header/header.component';
 import { MobileCardComponent } from './mobile-cards/mobile-card/mobile-card.component';
-import { MobileServices } from './mobile-data.service';
 import { AddMobileComponent } from './add-mobile/add-mobile.component';
 import { MobileCardsComponent } from './mobile-cards/mobile-cards.component';
 
 const appRoutes: Routes = [
   {path:'', component: MobileCardsComponent },
   {path:'addmobile', component: AddMobileComponent },
+  {path:'header', component: HeaderComponent },
 ]
 
 @NgModule({
@@ -26,7 +26,7 @@ const appRoutes: Routes = [
     MobileCardsComponent,
   ],
   imports: [BrowserModule, FormsModule,RouterModule.forRoot(appRoutes)],
-  providers: [MobileServices],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

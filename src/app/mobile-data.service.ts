@@ -1,5 +1,7 @@
+import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
 
+@Injectable({providedIn:'root'})
 export class MobileServices {
   devices = [
     {
@@ -7,7 +9,7 @@ export class MobileServices {
       price: '16000',
       ram: '6GB',
       rom: '64GB',
-      color: 'blue',
+      color: 'Blue',
       display: '6 inch',
       processor: 'Snapdragon',
     },
@@ -16,7 +18,7 @@ export class MobileServices {
       price: '14000',
       ram: '4GB',
       rom: '128GB',
-      color: 'white',
+      color: 'White',
       display: '6.2 inch',
       processor: 'MediaTek',
     },
@@ -25,7 +27,7 @@ export class MobileServices {
       price: '15000',
       ram: '6GB',
       rom: '64GB',
-      color: 'black',
+      color: 'Black',
       display: '6.5 inch',
       processor: 'snapdragon',
     },
@@ -34,7 +36,7 @@ export class MobileServices {
       price: '95000',
       ram: ` --- `,
       rom: '256GB',
-      color: 'blue',
+      color: 'Rose Gold',
       display: '6 inch',
       processor: 'Apple A13',
     },
@@ -43,7 +45,7 @@ export class MobileServices {
       price: '25000',
       ram: '6GB',
       rom: '256GB',
-      color: 'blue',
+      color: 'Blue',
       display: '6 inch',
       processor: 'Snapdragon',
     },
@@ -61,7 +63,7 @@ export class MobileServices {
       price: '25000',
       ram: '4GB',
       rom: '64GB',
-      color: 'pink',
+      color: 'Pink',
       display: '6.5 inch',
       processor: 'Snapdragon',
     },
@@ -70,7 +72,7 @@ export class MobileServices {
       price: '11000',
       ram: '4GB',
       rom: '64GB',
-      color: 'black',
+      color: 'Rock Red',
       display: '5.5 inch',
       processor: 'Snapdragon',
     },

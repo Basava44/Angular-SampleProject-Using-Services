@@ -18,20 +18,22 @@
     margin: 0 10px;
 }
 
-.navbar ul li a{
+a{
     cursor: pointer;
     text-decoration: none;
     color: #ffffff;
 }
 
 .navbar ul li a:hover{
-    font-weight: bold;
+    font-weight: bolder;
 }
 
 .active{
    border-bottom: 3px solid white;
+   font-weight: bolder;
 }
 
 h1{
     color: white;
+    cursor: pointer;
 }
