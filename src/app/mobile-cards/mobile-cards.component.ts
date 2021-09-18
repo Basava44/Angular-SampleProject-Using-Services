@@ -7,7 +7,7 @@ import { MobileServices } from '../mobile-data.service';
   styleUrls: ['./mobile-cards.component.scss'],
 })
 export class MobileCardsComponent implements OnInit {
-  devices: {
+  devices:{
     name: string;
     price: string;
     ram: string;

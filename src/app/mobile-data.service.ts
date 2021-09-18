@@ -108,4 +108,9 @@ export class MobileServices {
     this.head.name = name;
     this._headerData.next(this.head);
   }
+
+  addData(data:any){
+    this.devices.push(data);
+  }
+
 }

@@ -1,32 +1,73 @@
-<form class="formWrapper" (ngSubmit) = "onSubmit(form)" #form="ngForm" autocomplete="off">
+<form class="formWrapper" (ngSubmit) = "onSubmit()" #form="ngForm" autocomplete="off">
     <h2 class="head">Add Mobile Details</h2>
     <div class="item">
         <label for="mobileName">Mobile Name : </label>
-        <input type="text" name="name" id="mobileName" ngModel>
+        <input 
+            type="text" 
+            name="name" 
+            id="mobileName" 
+            ngModel
+            required
+            autofocus
+        >
     </div>
     <div class="item">
         <label for="price">Amount : </label>
-        <input type="text" name="price" id="price" ngModel>
+        <input 
+            type="number" 
+            name="price" 
+            id="price" 
+            ngModel
+            required
+        >
     </div>
     <div class="item">
         <label for="ram">RAM : </label>
-        <input type="text" name="ram" id="ram" ngModel>
+        <input 
+            type="number" 
+            name="ram" 
+            id="ram" 
+            ngModel
+        >
     </div>
     <div class="item">
         <label for="rom">ROM : </label>
-        <input type="text" name="rom" id="rom" ngModel>
+        <input 
+            type="number" 
+            name="rom" 
+            id="rom"    
+            ngModel
+        >
     </div>
     <div class="item">
         <label for="color">Color : </label>
-        <input type="text" name="color" id="color" ngModel>
+        <input 
+            type="text" 
+            name="color"    
+            id="color" 
+            ngModel
+            required
+        >
     </div>
     <div class="item">
         <label for="display">Display Size : </label>
-        <input type="text" name="display" id="display" ngModel>
+        <input 
+            type="number" 
+            name="display" 
+            id="display" 
+            ngModel
+            required
+        >
     </div>
     <div class="item">
         <label for="processor">Processor : </label>
-        <input type="text" name="processor" id="processor" ngModel>
+        <input 
+            type="text" 
+            name="processor" 
+            id="processor" 
+            ngModel
+            required
+        >
     </div>
     <div class="buttons">
         <button type="submit" class="submit">Submit</button>

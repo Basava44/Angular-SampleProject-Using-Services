@@ -1,6 +1,6 @@
 .formWrapper{
     padding: 20px 30px;
-    border: 2px solid black;
+    border: 2px solid green;
     background-color: rgb(248, 248, 248);
     margin: 15px auto;
     border-radius: 8px;
@@ -49,7 +49,7 @@ button{
 
 label{
     font-weight: bold;
-    margin-top: 3px;
+    margin-top: 8px;
 }
 
 .buttons{
@@ -57,6 +57,16 @@ label{
     justify-content: flex-end;
 }
 
+button:disabled:hover{
+    background-color: transparent;
+    color: lightgray;
+    font-weight: normal;
+}
+
 .head{
     text-align: center;
+}
+
+form.ng-invalid.ng-touched{
+    border-color: red;
 }

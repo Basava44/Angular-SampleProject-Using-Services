@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { MobileServices } from '../mobile-data.service';
@@ -8,18 +8,34 @@ import { MobileServices } from '../mobile-data.service';
   templateUrl: './add-mobile.component.html',
   styleUrls: ['./add-mobile.component.scss'],
 })
-export class AddMobileComponent {
+export class AddMobileComponent{
+
+  @ViewChild('form',{static:true}) submitData!:NgForm;
+
   constructor(
     private route: Router,
     private Data:MobileServices,
   ) {}
 
-  onSubmit(data:NgForm){
-    data.value.rom = data.value.rom + ' GB';
-    data.value.ram = data.value.ram + ' GB';
-    data.value.display = data.value.display + ' inch';
-    this.Data.devices.push(data.value);
-    this.route.navigate(['/']);
+  onSubmit(){
+    this.dataValidation();
+    if(this.submitData.valid)
+    {
+      this.Data.addData(this.submitData.value);
+      this.route.navigate(['/']);
+    }
+  }
+
+  dataValidation(){
+    if (this.submitData.value.rom != '')
+      this.submitData.value.rom = this.submitData.value.rom + ' GB';
+    else 
+      this.submitData.value.rom = "---"
+    if (this.submitData.value.ram != '')
+      this.submitData.value.ram = this.submitData.value.ram + ' GB';
+    else
+      this.submitData.value.ram = '---';
+    this.submitData.value.display = this.submitData.value.display + ' inch';
   }
 
 }
