@@ -8,34 +8,27 @@ import { MobileServices } from '../mobile-data.service';
   templateUrl: './add-mobile.component.html',
   styleUrls: ['./add-mobile.component.scss'],
 })
-export class AddMobileComponent{
+export class AddMobileComponent {
+  @ViewChild('form', { static: true }) submitData!: NgForm;
 
-  @ViewChild('form',{static:true}) submitData!:NgForm;
+  constructor(private route: Router, private Data: MobileServices) {}
 
-  constructor(
-    private route: Router,
-    private Data:MobileServices,
-  ) {}
-
-  onSubmit(){
+  onSubmit() {
     this.dataValidation();
-    if(this.submitData.valid)
-    {
+    if (this.submitData.valid) {
       this.Data.addData(this.submitData.value);
       this.route.navigate(['/']);
     }
+    console.log(this.submitData.value);
   }
 
-  dataValidation(){
+  dataValidation() {
     if (this.submitData.value.rom != '')
       this.submitData.value.rom = this.submitData.value.rom + ' GB';
-    else 
-      this.submitData.value.rom = "---"
+    else this.submitData.value.rom = '---';
     if (this.submitData.value.ram != '')
       this.submitData.value.ram = this.submitData.value.ram + ' GB';
-    else
-      this.submitData.value.ram = '---';
+    else this.submitData.value.ram = '---';
     this.submitData.value.display = this.submitData.value.display + ' inch';
   }
-
 }
