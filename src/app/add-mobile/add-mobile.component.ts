@@ -19,15 +19,14 @@ export class AddMobileComponent {
       this.Data.addData(this.submitData.value);
       this.route.navigate(['/']);
     }
-    console.log(this.submitData.value);
   }
 
   dataValidation() {
     if (this.submitData.value.rom != '')
-      this.submitData.value.rom = this.submitData.value.rom + ' GB';
+      this.submitData.value.rom = this.submitData.value.rom + 'GB';
     else this.submitData.value.rom = '---';
     if (this.submitData.value.ram != '')
-      this.submitData.value.ram = this.submitData.value.ram + ' GB';
+      this.submitData.value.ram = this.submitData.value.ram + 'GB';
     else this.submitData.value.ram = '---';
     this.submitData.value.display = this.submitData.value.display + ' inch';
   }

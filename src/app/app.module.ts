@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { CountComponent } from './mobile-cards/count/count.component';
@@ -25,7 +26,12 @@ const appRoutes: Routes = [
     AddMobileComponent,
     MobileCardsComponent,
   ],
-  imports: [BrowserModule, FormsModule,RouterModule.forRoot(appRoutes)],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

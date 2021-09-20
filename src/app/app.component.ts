@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { MobileServices } from './mobile-data.service';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +6,4 @@ import { MobileServices } from './mobile-data.service';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  
 }

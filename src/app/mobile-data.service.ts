@@ -1,8 +1,12 @@
 import { Injectable } from '@angular/core';
 import { Subject } from 'rxjs';
+import { DataServices } from './dataServices.service';
 
-@Injectable({providedIn:'root'})
+@Injectable({ providedIn:'root' })
 export class MobileServices {
+
+  constructor(private dataServices:DataServices){}
+
   devices = [
     {
       name: 'Poco F1',
@@ -101,6 +105,7 @@ export class MobileServices {
     });
     this._mobileData.next(this.devices);
     this._count.next(this.devices.length);
+    this.dataServices.getData();
   }
 
   updateHeader(name: string, amount: string) {
@@ -111,6 +116,7 @@ export class MobileServices {
 
   addData(data:any){
     this.devices.push(data);
+    this.dataServices.postData(data);
   }
 
 }
