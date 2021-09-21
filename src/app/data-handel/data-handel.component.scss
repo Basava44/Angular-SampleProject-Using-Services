@@ -4,14 +4,34 @@
 }
 
 button{
-    background-color: transparent;
-    border: none;
     font-size: 12px;
-    margin: 10px;
+    margin: 4px;
     cursor: pointer;
-    font-weight: bold;
+    border: none;
+    padding: 8px 10px;
+    border-radius: 4px;
 }
 
-button:hover{
-    text-decoration: underline;
+.fetch{
+    background-color: #337AB7;
+    color: white;
+    margin-left: 10px;
+}
+
+.fetch:hover{
+    background-color: #286090;
+}
+
+.delete{
+    background-color: #D9534F;
+    color: white;
+}
+
+.delete:hover{
+    background-color: #C9302C;
+}
+
+.delete:disabled{
+    opacity: 0.65;
+    cursor: not-allowed;
 }

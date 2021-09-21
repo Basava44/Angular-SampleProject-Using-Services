@@ -8,16 +8,21 @@ import { MobileServices } from '../mobile-data.service';
   styleUrls: ['./data-handel.component.scss'],
 })
 export class DataHandelComponent implements OnInit {
-  constructor(private DataServices:DataServices, private MobileServices:MobileServices) {}
+  constructor(
+    private DataServices: DataServices,
+    private MobileServices: MobileServices
+  ) {}
 
   ngOnInit(): void {}
 
-  deleteAll(){
+  deleteAll() {
     this.DataServices.clearData();
     this.MobileServices.updateData();
   }
 
-  update(){
+  update() {
     this.MobileServices.fetchData();
   }
+
+  disable = (this.MobileServices.devices.length>0)? true:false;
 }

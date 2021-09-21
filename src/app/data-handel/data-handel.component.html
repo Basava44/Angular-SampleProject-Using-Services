@@ -1,4 +1,13 @@
 <div class="buttons">
-    <button (click)="update()">Update Data</button>
-    <button (click)="deleteAll()">Delete All</button>
+    <button 
+        (click)="update()" 
+        class="fetch"
+        title="Fetch Data From DB"
+        >Fetch Data</button>
+    <button 
+        (click)="deleteAll()" 
+        class="delete"
+        [disabled]="disable"
+        title="Delete All Mobile Data"
+        >Remove All</button>
 </div>
