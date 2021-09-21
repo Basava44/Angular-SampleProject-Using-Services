@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnChanges, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { DataServices } from '../dataServices.service';
 import { MobileServices } from '../mobile-data.service';
 
@@ -7,22 +8,30 @@ import { MobileServices } from '../mobile-data.service';
   templateUrl: './data-handel.component.html',
   styleUrls: ['./data-handel.component.scss'],
 })
+
 export class DataHandelComponent implements OnInit {
   constructor(
     private DataServices: DataServices,
     private MobileServices: MobileServices
   ) {}
 
-  ngOnInit(): void {}
+  disable = false;
+
+  ngOnInit(){
+    this.MobileServices.count$.subscribe(
+      data => {
+        this.disable = data>0 ? false : true;
+      }
+    )
+  }
+
 
   deleteAll() {
     this.DataServices.clearData();
-    this.MobileServices.updateData();
+    this.MobileServices.fetchData();
   }
 
   update() {
     this.MobileServices.fetchData();
   }
-
-  disable = (this.MobileServices.devices.length>0)? true:false;
 }
