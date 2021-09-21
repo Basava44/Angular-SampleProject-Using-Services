@@ -1,4 +1,4 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataServices } from '../dataServices.service';
 import { MobileServices } from '../mobile-data.service';
 
@@ -7,7 +7,7 @@ import { MobileServices } from '../mobile-data.service';
   templateUrl: './mobile-cards.component.html',
   styleUrls: ['./mobile-cards.component.scss'],
 })
-export class MobileCardsComponent implements OnInit, OnDestroy {
+export class MobileCardsComponent implements OnInit {
   devices:{
     name: string;
     price: string;
@@ -18,19 +18,16 @@ export class MobileCardsComponent implements OnInit, OnDestroy {
     processor: string;
   }[] = [];
 
-  constructor(private Data: MobileServices, private MobileDataServices:DataServices) {
-    this.devices = Data.devices;
+  // devices:object[]=[];
+
+  constructor(private Data: MobileServices) {
+    Data.fetchData(); 
   }
 
   ngOnInit() {
     this.Data.mobileData$.subscribe((data) => {
       this.devices = data;
-    });
-  }
-
-  ngOnDestroy(){
-    if(this.devices.length === 0)
-      this.MobileDataServices.clearData();
+    });  
   }
   
 

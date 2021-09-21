@@ -1,8 +1,9 @@
 <div class="mainwrapper">
+  <app-data-handel></app-data-handel>
   <app-header></app-header>
   <app-count></app-count>
   <p class="nocards" *ngIf = "devices.length === 0" >No Cards</p>
-  <div class="cardContainer">
+  <div class="cardContainer" *ngIf = "devices.length > 0">
     <app-mobile-card
         *ngFor="let device of devices let i = index"
         [mobileData] = device

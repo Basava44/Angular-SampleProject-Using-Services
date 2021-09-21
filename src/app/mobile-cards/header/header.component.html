@@ -1,4 +1,5 @@
 <div class="header">
     <label>{{ currentMobile }}</label>
-    <label>{{ currentPrice }}</label>
+    <label *ngIf="currentPrice != 'Price'">{{ currentPrice | currency }}</label>
+    <label *ngIf="currentPrice === 'Price'">Price</label>
 </div>

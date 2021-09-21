@@ -10,6 +10,7 @@ import { HeaderComponent } from './mobile-cards/header/header.component';
 import { MobileCardComponent } from './mobile-cards/mobile-card/mobile-card.component';
 import { AddMobileComponent } from './add-mobile/add-mobile.component';
 import { MobileCardsComponent } from './mobile-cards/mobile-cards.component';
+import { DataHandelComponent } from './data-handel/data-handel.component';
 
 const appRoutes: Routes = [
   {path:'', component: MobileCardsComponent },
@@ -25,6 +26,7 @@ const appRoutes: Routes = [
     MobileCardComponent,
     AddMobileComponent,
     MobileCardsComponent,
+    DataHandelComponent,
   ],
   imports: [
     BrowserModule,

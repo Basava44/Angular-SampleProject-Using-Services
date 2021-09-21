@@ -4,6 +4,7 @@ import {
   ViewChild,
   ElementRef,
 } from '@angular/core';
+import { MobileData } from 'src/app/mobileData.module';
 import { MobileServices } from '../../mobile-data.service';
 
 @Component({
@@ -11,18 +12,10 @@ import { MobileServices } from '../../mobile-data.service';
   templateUrl: './mobile-card.component.html',
   styleUrls: ['./mobile-card.component.scss'],
 })
-export class MobileCardComponent {
+export class MobileCardComponent{
 
   @Input()
-  mobileData!: {
-    name: string;
-    price: string;
-    ram: string;
-    rom: string;
-    color: string;
-    display: string;
-    processor: string;
-  };
+  mobileData!:MobileData;
 
   updateAmount: boolean = false;
 
@@ -49,8 +42,11 @@ export class MobileCardComponent {
 
   constructor(private Data: MobileServices) {}
 
-  remove(event: object) {
+  async remove(event: object) {
     this.Data.delete(event);
+    await setTimeout(()=>{
+      this.Data.fetchData();
+    },1000);
   }
 
   updateHeader(name: string, amount: string) {
