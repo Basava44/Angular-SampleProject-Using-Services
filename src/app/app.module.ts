@@ -13,9 +13,9 @@ import { MobileCardsComponent } from './mobile-cards/mobile-cards.component';
 import { DataHandelComponent } from './data-handel/data-handel.component';
 
 const appRoutes: Routes = [
-  {path:'', component: MobileCardsComponent },
+  {path:'', redirectTo:'/cards', pathMatch:'full'},
+  {path:'cards', component: MobileCardsComponent },
   {path:'addmobile', component: AddMobileComponent },
-  {path:'header', component: HeaderComponent },
 ]
 
 @NgModule({
