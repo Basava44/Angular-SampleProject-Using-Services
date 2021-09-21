@@ -46,7 +46,13 @@ export class MobileCardComponent{
     this.Data.delete(event);
     await setTimeout(()=>{
       this.Data.fetchData();
+      this.checkHeader(event);
     },1000);
+  }
+
+  checkHeader(event: any){
+   if(event.name === this.Data.head.name) 
+    this.updateHeader('Mobile','Price');
   }
 
   updateHeader(name: string, amount: string) {
