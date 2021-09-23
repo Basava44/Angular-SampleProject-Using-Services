@@ -795,19 +795,19 @@ export class DevicesDataService {
 
   selectedDevice = new Subject<any>();
   show = new Subject<boolean>();
-  // compareCount = new Subject<number>();
+  compareCount = new Subject<number>();
 
   comparisionArray: any[] = [];
 
   addToCompare(mobile: any) {
     this.comparisionArray.push(mobile);
-    // this.compareCount.next(this.addToCompare.length);
+    this.compareCount.next(this.comparisionArray.length);
   }
   
   removeFromCompare(mobile: any) {
     this.comparisionArray = this.comparisionArray.filter((data) => {
       return data != mobile;
     });
-    // this.compareCount.next(this.addToCompare.length);
+    this.compareCount.next(this.comparisionArray.length);
   }
 }

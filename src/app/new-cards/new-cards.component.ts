@@ -13,6 +13,8 @@ export class NewCardsComponent implements OnInit {
   devices: any = [];
   brandNames: string[] = [];
   data: string = '';
+  show: boolean = false; //overlay Show
+  compareCount: number = 0;
 
   ngOnInit(): void {
     for (let i in this.MobileDataBase) {
@@ -20,13 +22,18 @@ export class NewCardsComponent implements OnInit {
       this.brandNames.push(i);
     }
     this.mobileData.show.subscribe((data) => (this.show = data));
+    this.mobileData.compareCount.subscribe(
+      data => {
+        this.compareCount = data;
+      }
+    )
   }
 
-  filter: boolean = false;
-  onSearch(){
-    this.filter = !this.filter;
+  search: boolean = false;
+  onSearch() {
+    this.search = !this.search;
   }
 
-
-  show: boolean = false;
+  openComparisonPage(){
+  }
 }

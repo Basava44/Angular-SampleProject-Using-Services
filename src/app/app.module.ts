@@ -15,6 +15,7 @@ import { FilterPipe } from './filter.pipe';
 import { NewCardsComponent } from './new-cards/new-cards.component';
 import { CardComponent } from './new-cards/card/card.component';
 import { DisplayCardComponent } from './new-cards/display-card/display-card.component';
+import { ComparisonPageComponent } from './new-cards/comparison-page/comparison-page.component';
 
 const appRoutes: Routes = [
   {path:'', redirectTo:'/cards', pathMatch:'full'},
@@ -36,6 +37,7 @@ const appRoutes: Routes = [
     NewCardsComponent,
     CardComponent,
     DisplayCardComponent,
+    ComparisonPageComponent,
   ],
   imports: [
     BrowserModule,
