@@ -1,0 +1,68 @@
+.cardWrapper{
+    margin: 10px;
+    padding: 10px 0;
+    background-color: white;
+    width: fit-content;
+}
+
+.mobileDetails{
+    display: flex;
+}
+
+img{
+    width: 100px;
+    height: 200px;
+    margin: 10px;
+}
+
+.mobileDetails .details{
+    margin: 10px;
+    padding: 0 30px;
+    line-height: 25px;
+}
+
+.mobileDetails .details ul{
+    font-size: 14px;
+    line-height: 20px;
+    margin: 10px 0 0 20px;
+}
+
+.mobileDetails .details .modelName{
+    font-size: 24px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.mobileDetails .details .rating{
+    padding: 0 5px;
+    border-radius: 8px;
+    font-size: 12px;
+    background-color: rgba(0, 128, 0, 0.705);
+    color: white;
+    font-weight: bold;
+    width: fit-content;
+}
+
+.mobileDetails .price{
+    padding: 20px;
+    list-style: none;
+}
+
+.mobileDetails .price .amount{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.mobileDetails .price .release{
+    margin: 5px 0;
+}
+
+.viewButton{
+    padding: 10px;
+    background-color: rgb(17, 170, 17);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    margin-top: 90px;
+    margin-left: 160px;
+}

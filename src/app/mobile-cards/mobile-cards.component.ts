@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { MobileServices } from '../mobile-data.service';
 import { MobileData } from '../mobileData.module';
 
@@ -14,8 +14,11 @@ export class MobileCardsComponent implements OnInit {
   search: boolean = false;
   searchCount!:number;
 
-  onsearch(){
+  @ViewChild('searchBar',{static:false}) bar!: ElementRef;
+
+  onSearch(){
     this.search = !this.search;
+    console.log(this.bar.nativeElement.value);
   }
 
   constructor(private Data: MobileServices) {

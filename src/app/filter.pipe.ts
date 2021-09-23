@@ -19,12 +19,10 @@ export class FilterPipe implements PipeTransform {
     
 
     if(search){
-      // filterData = filterData.toLowerCase();
-      // console.log(filterData);
+      filterData = filterData.replace(' ','').toLowerCase();
       const resultArray = [];
       for (const item of value) {
         const name = item.name.toLowerCase();
-        // console.log(name.search(filterData));
         if (name.search(filterData) >= 0) resultArray.push(item);
       }
       this.Data.searchCount.next(resultArray.length);

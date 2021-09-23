@@ -1,12 +1,12 @@
 <div class="mainwrapper">
   <app-data-handel></app-data-handel>
   <app-header></app-header>
-  <div class="filterWrapper">
-    <h5>Filter Items</h5>
-    <input type="text" [(ngModel)]="data" placeholder="Search Item">
-    <button type="button" (click)="onsearch()">{{search? 'Cancel': 'Search'}}</button>
+  <form class="filterWrapper" (ngSubmit)="onSearch()" autocomplete="off">
+    <h5>Search Items</h5>
+    <input type="text" [(ngModel)]="data" placeholder="Search Item" #searchBar name="input">
+    <button type="submit">{{search? 'Cancel': 'Search'}}</button>
     <p *ngIf="search && data.length < 2" class="caution">Please Enter More Characters</p>
-  </div>
+  </form>
   <app-count></app-count>
   <p *ngIf="searchCount==0">No Cards</p>
   <div class="cardContainer">

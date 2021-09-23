@@ -3,7 +3,6 @@ import { HttpClient } from '@angular/common/http';
 import { MobileData } from './mobileData.module';
 
 import { map } from 'rxjs/operators';
-import { MobileServices } from './mobile-data.service';
 
 @Injectable({ providedIn: 'root' })
 export class DataServices {
