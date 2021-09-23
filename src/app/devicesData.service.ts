@@ -1,9 +1,9 @@
 import { Injectable } from "@angular/core";
 import { Subject } from "rxjs";
 
-@Injectable({providedIn:'root'})
+@Injectable({ providedIn: 'root' })
 export class DevicesDataService {
-  brands:any = {
+  brands: any = {
     Samsung: [
       {
         model: 'Galaxy A80',
@@ -528,6 +528,26 @@ export class DevicesDataService {
         imageUrl:
           'https://rukminim1.flixcart.com/image/416/416/j7qi9ow0/mobile/g/g/f/apple-iphone-7-mn8y2hn-a-original-imaexwzn8ynwbhtj.jpeg?q=70',
       },
+      {
+        model: 'iphone 13',
+        price: 108000,
+        dateOfRelease: '23-02-2019',
+        ratings: 4.6,
+        ram: '8 GB RAM ',
+        rom: '128 GB ROM',
+        screenSize: '17.02 cm (6.7 inch) Full HD+ Display',
+        camera:
+          '48MP + | 48MP(F2.0) + 8MP(Ultra Wide/F2.2) + TOF (Time-of-Flight) 3D-Depth Rotating Camera',
+        battery: '3700 mAh Battery',
+        processor: 'Qualcomm Snapdragon 730G Octa-Core Processor',
+        modelNumber: 'SM-A805FZDUINS',
+        color: 'Angel Gold',
+        simType: 'Dual Sim',
+        hybridSimSlot: 'No',
+        otg_Compatible: 'Yes',
+        imageUrl:
+          'https://rukminim1.flixcart.com/image/416/416/ktketu80/mobile/e/e/r/iphone-13-mlpj3hn-a-apple-original-imag6vpykhzqhmgh.jpeg?q=70',
+      },
     ],
     Oneplus: [
       {
@@ -775,5 +795,19 @@ export class DevicesDataService {
 
   selectedDevice = new Subject<any>();
   show = new Subject<boolean>();
+  // compareCount = new Subject<number>();
 
+  comparisionArray: any[] = [];
+
+  addToCompare(mobile: any) {
+    this.comparisionArray.push(mobile);
+    // this.compareCount.next(this.addToCompare.length);
+  }
+  
+  removeFromCompare(mobile: any) {
+    this.comparisionArray = this.comparisionArray.filter((data) => {
+      return data != mobile;
+    });
+    // this.compareCount.next(this.addToCompare.length);
+  }
 }

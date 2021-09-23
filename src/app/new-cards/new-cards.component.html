@@ -3,8 +3,8 @@
     <input type="text" [(ngModel)]="data" placeholder="Search Item" #searchBar name="input">
     <button type="submit">{{filter? 'Cancel': 'Search'}}</button>
     <p *ngIf="filter && data.length < 2" class="caution">Please Enter More Characters</p>
-  </form>
-
+</form>
+<button class="startCompare" *ngIf="">Compare</button>
 <div class="mobileWrapper">
     <div *ngFor="let array of devices; let i = index" class="Brands">
         <h2 class="brandName"> {{ brandNames[i] }} Section</h2>
