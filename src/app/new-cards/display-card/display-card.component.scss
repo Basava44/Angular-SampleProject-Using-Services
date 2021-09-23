@@ -1,0 +1,90 @@
+.backdrop{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.75);
+    z-index: 50;
+}
+
+.displayCardWrapper{
+    position: fixed;
+    top: 20vh;
+    left: 25vh;
+    padding: 30px;
+    z-index: 100;
+    background-color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+}
+
+
+.displayCardWrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+img{
+    margin: 10px;
+    width: 160px;
+    height: 300px;
+}
+
+.displayCardWrapper .description{
+    margin: 25px 40px;
+}
+
+.displayCardWrapper .description ul{
+    font-size: 14px;
+    line-height: 20px;
+    margin: 30px 0 0 20px;
+}
+
+.displayCardWrapper .description .modelName{
+    font-size: 24px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.displayCardWrapper .description .modelName span{
+    font-size: 20px;
+}
+
+.displayCardWrapper .description .rating{
+    padding: 0 5px;
+    border-radius: 8px;
+    font-size: 12px;
+    background-color: rgba(0, 128, 0, 0.705);
+    color: white;
+    font-weight: bold;
+    width: fit-content;
+    margin: 5px 0;
+}
+
+.price{
+    list-style: none;
+    margin: 25px 0;
+    margin-right: 30px;
+}
+
+.price .amount{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.release{
+    margin: 35px 0 0 0;
+    font-weight: bold;
+    font-size: 1.3rem;
+}
+
+.close{
+    position: absolute;
+    top: 0;
+    right: 10px;
+    border: none;
+    font-size: 40px;
+    background-color: transparent;
+    cursor: pointer;
+    color: black;
+}

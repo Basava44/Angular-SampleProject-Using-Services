@@ -14,6 +14,7 @@ import { DataHandelComponent } from './data-handel/data-handel.component';
 import { FilterPipe } from './filter.pipe';
 import { NewCardsComponent } from './new-cards/new-cards.component';
 import { CardComponent } from './new-cards/card/card.component';
+import { DisplayCardComponent } from './new-cards/display-card/display-card.component';
 
 const appRoutes: Routes = [
   {path:'', redirectTo:'/cards', pathMatch:'full'},
@@ -33,6 +34,7 @@ const appRoutes: Routes = [
     FilterPipe,
     NewCardsComponent,
     CardComponent,
+    DisplayCardComponent,
   ],
   imports: [
     BrowserModule,

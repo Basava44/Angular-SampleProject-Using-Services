@@ -1,17 +1,20 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { DevicesDataService } from 'src/app/devicesData.service';
 
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
-  styleUrls: ['./card.component.scss']
+  styleUrls: ['./card.component.scss'],
 })
-export class CardComponent implements OnInit {
+export class CardComponent {
+  constructor(private deviceDataService:DevicesDataService) {}
 
-  constructor() { }
+  @Input() deviceData: any = [];
 
-  @Input() deviceData:any = [];
-
-  ngOnInit(): void {
+  async display(){
+    this.deviceDataService.show.next(true);
+    await setTimeout(() => {
+      this.deviceDataService.selectedDevice.next(this.deviceData);
+    }, 1);
   }
-
 }

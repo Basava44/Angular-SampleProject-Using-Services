@@ -1,0 +1,28 @@
+<div class="backdrop"></div>
+<div class="mainWrapper">
+  <div class="displayCardWrapper">
+    <div class="image">
+      <img [src]="deviceData.imageUrl" alt="{{ deviceData.model }}" />
+    </div>
+    <div class="description">
+      <h3 class="modelName">
+        {{ deviceData.model }} <span>({{ deviceData.color }})</span>
+      </h3>
+      <div class="rating">{{ deviceData.ratings }}&#9734;</div>
+      <ul>
+        <li>{{ deviceData.ram }} | {{ deviceData.rom }}</li>
+        <li>{{ deviceData.screenSize }}</li>
+        <li>{{ deviceData.camera }}</li>
+        <li>{{ deviceData.battery }}</li>
+        <li>{{ deviceData.processor }}</li>
+        <li>1 Year Warranty for Mobile and 6 Months for Accessories</li>
+      </ul>
+      <div class="release">Date of release: {{ deviceData.dateOfRelease }}</div>
+    </div>
+    <div class="price">
+      <h3>Price</h3>
+      <div class="amount">{{ deviceData.price | currency }}</div>
+      <button class="close" (click)="close()">&times;</button>
+    </div>
+  </div>
+</div>

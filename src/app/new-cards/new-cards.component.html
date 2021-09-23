@@ -1,4 +1,14 @@
 <div class="mobileWrapper">
-    <app-card>
-    </app-card>
+    <div *ngFor="let array of devices; let i = index" class="Brands">
+        <h2 class="brandName"> {{ brandNames[i] }} Section</h2>
+        <div class="mobileArray">
+            <app-card
+                *ngFor=" let mobile of array "
+                [deviceData] = mobile
+                class="mobileCard"
+            ></app-card>
+        </div>
+    </div>
 </div>
+
+<app-display-card *ngIf="show"></app-display-card>

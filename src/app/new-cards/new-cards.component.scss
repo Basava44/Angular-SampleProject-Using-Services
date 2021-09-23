@@ -1,0 +1,20 @@
+.Brands{
+    padding: 20px;
+    background-color: rgba(128, 128, 128, 0.315);
+}
+
+.brandName{
+    color: black;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.mobileArray{
+    margin-top: 10px;
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+
+.mobileCard{
+    display: flex;
+}

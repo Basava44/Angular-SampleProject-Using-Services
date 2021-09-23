@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { Subject } from "rxjs";
 
 @Injectable({providedIn:'root'})
 export class DevicesDataService {
@@ -427,7 +428,7 @@ export class DevicesDataService {
           'https://rukminim1.flixcart.com/image/416/416/j7qi9ow0/mobile/h/f/t/apple-iphone-6s-mn0x2hn-a-original-imaexw7fpbbfwwtw.jpeg?q=70',
       },
       {
-        model: 'Apple iPhone 7 (Rose Gold, 32 GB)',
+        model: 'Apple iPhone 7',
         price: 36999,
         dateOfRelease: '11-11-2017',
         ratings: 4.4,
@@ -468,7 +469,7 @@ export class DevicesDataService {
       },
 
       {
-        model: 'Apple iPhone 8 (PRODUCT)RED (Red, 64 GB)',
+        model: 'Apple iPhone 8 ',
         price: 53490,
         dateOfRelease: '06-06-2017',
         ratings: 4.2,
@@ -488,7 +489,7 @@ export class DevicesDataService {
           'https://rukminim1.flixcart.com/image/416/416/jgffp8w0/mobile/g/g/c/apple-iphone-8-product-red-special-edition-mrrk2hn-a-original-imaf4gudf5bzzxht.jpeg?q=70',
       },
       {
-        model: 'Apple IPhone 4 (Black, 8 GB)',
+        model: 'Apple IPhone 4',
         price: 20824,
         dateOfRelease: '23-02-2019',
         ratings: 4,
@@ -508,7 +509,7 @@ export class DevicesDataService {
           'https://rukminim1.flixcart.com/image/416/416/mobile/h/e/n/apple-iphone-4-original-imadknfx36wrgvug.jpeg?q=70',
       },
       {
-        model: 'Apple iPhone 7 (Silver, 128 GB)',
+        model: 'Apple iPhone 7',
         price: 47999,
         dateOfRelease: '23-02-2019',
         ratings: 4.5,
@@ -550,7 +551,7 @@ export class DevicesDataService {
           'https://rukminim1.flixcart.com/image/416/416/jwuzzww0/cases-covers/front-back-case/r/p/d/flipkart-smartbuy-op7p-gkk-red-original-imafhg72hjhfygkh.jpeg?q=70',
       },
       {
-        model: 'One Plus 5 (Black, 128 GB)  (8 GB RAM)',
+        model: 'One Plus 5',
         price: 40000,
         dateOfRelease: '28-12-2016',
         ratings: 4.2,
@@ -690,7 +691,7 @@ export class DevicesDataService {
           'https://rukminim1.flixcart.com/image/416/416/jeykeq80/mobile/n/q/v/oneplus-oneplus-5-a5000-original-imaf3jfkg8jkhdfh.jpeg?q=70',
       },
       {
-        model: 'OnePlus 5 (Slate Gray, 128 GB)  (8 GB RAM)',
+        model: 'OnePlus 5',
         price: 37999,
         dateOfRelease: '15-01-2017',
         ratings: 4.3,
@@ -771,4 +772,8 @@ export class DevicesDataService {
       },
     ],
   };
+
+  selectedDevice = new Subject<any>();
+  show = new Subject<boolean>();
+
 }

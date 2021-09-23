@@ -10,6 +10,8 @@ export class AppComponent implements OnInit {
   constructor(private mobileData:DevicesDataService){
   }
 
+  show: boolean = false;
+
   ngOnInit(){
     // for(let i in this.mobileData.brands)
     // {
@@ -22,7 +24,9 @@ export class AppComponent implements OnInit {
     //     }
     //   }
     // } 
-
+    this.mobileData.show.subscribe(
+      data => this.show = data
+    )
   }
 
 }

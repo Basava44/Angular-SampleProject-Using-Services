@@ -11,6 +11,8 @@ export class FilterPipe implements PipeTransform {
 
   transform(value: any, filterData: string, search: boolean) {
 
+    //console.log(value);
+
     if (filterData.length < 2) {
       this.Data.searchCount.next(value.length);
       return value;
@@ -22,7 +24,7 @@ export class FilterPipe implements PipeTransform {
       filterData = filterData.replace(' ','').toLowerCase();
       const resultArray = [];
       for (const item of value) {
-        const name = item.name.toLowerCase();
+        const name = item.model ? item.model.toLowerCase() : item.name.toLowerCase();
         if (name.search(filterData) >= 0) resultArray.push(item);
       }
       this.Data.searchCount.next(resultArray.length);
