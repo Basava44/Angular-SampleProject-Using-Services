@@ -15,8 +15,8 @@ export class CountComponent implements OnInit {
   }
 
   ngOnInit(){
-    this.Data.count$.subscribe(
-      data => {this.count = data}
+    this.Data.searchCount.subscribe(
+      count => {this.count = count}
     )
   }
 

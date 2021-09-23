@@ -11,8 +11,8 @@ export class MobileServices {
     const getData = this.dataServices.getData();
     getData.subscribe((data) => {
       this.devices = data;
-      this._count.next(this.devices.length);
-      this._mobileData.next(this.devices);
+      this.count.next(this.devices.length);
+      this.mobileData.next(this.devices);
     });
     console.log('Data Fetched');
   }
@@ -99,14 +99,12 @@ export class MobileServices {
     amount: 'Price',
   };
 
-  private _headerData = new Subject<any>();
-  headerData$ = this._headerData.asObservable();
+  headerData = new Subject<{name:string, amount:string}>();
 
-  private _mobileData = new Subject<any>();
-  mobileData$ = this._mobileData.asObservable();
+  mobileData = new Subject<MobileData[]>();
+  searchCount = new Subject<number>();
 
-  private _count = new Subject<number>();
-  count$ = this._count.asObservable();
+  count = new Subject<number>();
 
   delete(data: any) {
     this.dataServices.removeDevice(data.id);
@@ -116,15 +114,15 @@ export class MobileServices {
     await setInterval(() => {
       this.fetchData(), 1000;
     });
-    this._mobileData.next(this.devices);
-    this._count.next(this.devices.length);
+    this.mobileData.next(this.devices);
+    this.count.next(this.devices.length);
     this.dataServices.getData();
   }
 
   updateHeader(name: string, amount: string) {
     this.head.amount = amount;
     this.head.name = name;
-    this._headerData.next(this.head);
+    this.headerData.next(this.head);
   }
 
   addData(data: any) {

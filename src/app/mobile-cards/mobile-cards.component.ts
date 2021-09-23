@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DataServices } from '../dataServices.service';
 import { MobileServices } from '../mobile-data.service';
+import { MobileData } from '../mobileData.module';
 
 @Component({
   selector: 'app-mobile-cards',
@@ -8,27 +8,24 @@ import { MobileServices } from '../mobile-data.service';
   styleUrls: ['./mobile-cards.component.scss'],
 })
 export class MobileCardsComponent implements OnInit {
-  devices:{
-    name: string;
-    price: string;
-    ram: string;
-    rom: string;
-    color: string;
-    display: string;
-    processor: string;
-  }[] = [];
+  devices: MobileData[] = [];
 
-  // devices:object[]=[];
+  data:string = '';
+  search: boolean = false;
+  searchCount!:number;
+
+  onsearch(){
+    this.search = !this.search;
+  }
 
   constructor(private Data: MobileServices) {
-    Data.fetchData(); 
+    Data.fetchData();
   }
 
   ngOnInit() {
-    this.Data.mobileData$.subscribe((data) => {
+    this.Data.mobileData.subscribe((data) => {
       this.devices = data;
-    });  
+    });
   }
-  
 
 }

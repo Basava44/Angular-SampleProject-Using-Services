@@ -17,7 +17,9 @@ export class DataServices {
       )
       .subscribe((responce: any) => {
         console.log('Device with id ' + responce.name + ' is added to DB');
-      });
+      },
+        error => {console.log(error);}
+      );
   }
 
   getData() {

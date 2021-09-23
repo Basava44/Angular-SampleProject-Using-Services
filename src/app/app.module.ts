@@ -11,6 +11,7 @@ import { MobileCardComponent } from './mobile-cards/mobile-card/mobile-card.comp
 import { AddMobileComponent } from './add-mobile/add-mobile.component';
 import { MobileCardsComponent } from './mobile-cards/mobile-cards.component';
 import { DataHandelComponent } from './data-handel/data-handel.component';
+import { FilterPipe } from './filter.pipe';
 
 const appRoutes: Routes = [
   {path:'', redirectTo:'/cards', pathMatch:'full'},
@@ -27,6 +28,7 @@ const appRoutes: Routes = [
     AddMobileComponent,
     MobileCardsComponent,
     DataHandelComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,

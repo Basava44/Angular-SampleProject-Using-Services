@@ -14,12 +14,19 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(){
-    this.Data.headerData$.subscribe(
-      data => {
+    // this.Data.headerData$.subscribe(
+    //   data => {
+    //     this.currentMobile = data.name;
+    //     this.currentPrice = data.amount;
+    //   }
+    // )
+
+    this.Data.headerData.subscribe(
+      (data) => {
         this.currentMobile = data.name;
         this.currentPrice = data.amount;
       }
-    )
+    );
   }
 
 }

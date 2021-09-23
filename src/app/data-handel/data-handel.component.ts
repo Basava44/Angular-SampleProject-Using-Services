@@ -1,5 +1,4 @@
-import { AfterViewInit, Component, OnChanges, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { DataServices } from '../dataServices.service';
 import { MobileServices } from '../mobile-data.service';
 
@@ -18,7 +17,7 @@ export class DataHandelComponent implements OnInit {
   disable = false;
 
   ngOnInit(){
-    this.MobileServices.count$.subscribe(
+    this.MobileServices.count.subscribe(
       data => {
         this.disable = data>0 ? false : true;
       }
@@ -27,8 +26,11 @@ export class DataHandelComponent implements OnInit {
 
 
   deleteAll() {
-    this.DataServices.clearData();
-    this.MobileServices.fetchData();
+    const Confirm = confirm('Do You want to clear all Data ?');
+    if(Confirm){
+      this.DataServices.clearData();
+      this.MobileServices.fetchData();
+    }
   }
 
   update() {
