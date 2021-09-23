@@ -18,3 +18,27 @@
 .mobileCard{
     display: flex;
 }
+
+.filterWrapper{
+    position: absolute;
+    right: 0;
+    top: 60px;
+    margin-right: 10px;
+}
+
+.filterWrapper.h5{
+    margin: 5px 0;
+}
+
+.filterWrapper button{
+    margin: 0 5px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.caution{
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+}

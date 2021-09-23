@@ -20,6 +20,7 @@ const appRoutes: Routes = [
   {path:'', redirectTo:'/cards', pathMatch:'full'},
   {path:'cards', component: MobileCardsComponent },
   {path:'addmobile', component: AddMobileComponent },
+  {path:'newWindow', component: NewCardsComponent},
 ]
 
 @NgModule({
