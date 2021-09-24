@@ -11,8 +11,6 @@ export class FilterPipe implements PipeTransform {
 
   transform(value: any, filterData: string, search: boolean) {
 
-    //console.log(value);
-
     if (filterData.length < 2) {
       this.Data.searchCount.next(value.length);
       return value;

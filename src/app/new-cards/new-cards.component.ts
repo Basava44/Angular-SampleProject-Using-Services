@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DevicesDataService } from '../devicesData.service';
+import { MobileServices } from '../mobile-data.service';
 
 @Component({
   selector: 'app-new-cards',
@@ -8,26 +9,27 @@ import { DevicesDataService } from '../devicesData.service';
   styleUrls: ['./new-cards.component.scss'],
 })
 export class NewCardsComponent implements OnInit {
-  constructor(private mobileData: DevicesDataService,
-              private router: Router,
-              private route: ActivatedRoute) {}
+  constructor(
+    private mobileData: DevicesDataService,
+    private mobileSevices: MobileServices,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
 
-  MobileDataBase: any = this.mobileData.brands;
-  devices: any = [];
+  devices: any = this.mobileData.brands;
   brandNames: string[] = [];
   data: string = '';
   show: boolean = false; //overlay Show
   compareCount: number = 0;
 
   ngOnInit(): void {
-    for (let i in this.MobileDataBase) {
-      this.devices.push(this.MobileDataBase[i]);
-      this.brandNames.push(i);
-    }
     this.mobileData.show.subscribe((data) => (this.show = data));
-    this.mobileData.compareCount.subscribe(
+    this.mobileData.compareCount.subscribe((data) => {
+      this.compareCount = data;
+    });
+    this.mobileData.alldevices.subscribe(
       data => {
-        this.compareCount = data;
+        this.devices = data;
       }
     )
   }
@@ -37,7 +39,11 @@ export class NewCardsComponent implements OnInit {
     this.search = !this.search;
   }
 
-  openComparisonPage(){
-    this.router.navigate(['compare'],{relativeTo:this.route});
+  openComparisonPage() {
+    this.router.navigate(['compare'], { relativeTo: this.route });
+  }
+
+  filterOut(ram: boolean, rom: boolean, price: boolean){
+    this.mobileData.filterOut(ram, rom, price);
   }
 }

@@ -5,17 +5,19 @@
     </div>
     <div class="details">
       <h3 class="modelName">
-        {{ deviceData.model }} <span>({{ deviceData.color }})</span>
+        {{ deviceData.model }} 
       </h3>
+      <span>({{ deviceData.color }})</span>
       <div class="rating">{{ deviceData.ratings }}&#9734;</div>
       <div class="price">
+        <div>{{ deviceData.ram }}|{{ deviceData.rom }}</div>
         <div class="amount">{{ deviceData.price | currency }}</div>
         <button class="viewButton" (click)="display()">View</button>
       </div>
     </div>
   </div>
   <div class="compare">
-    <input type="checkbox" name="Filter" (click)="selectedItem()" />
-    <span>&nbsp; Add to Compare</span>
+    <input type="checkbox" name="Filter" (click)="selectedItem()"/>
+    <label>&nbsp; Add to Compare</label>
   </div>
 </div>

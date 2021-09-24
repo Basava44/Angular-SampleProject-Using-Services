@@ -1,24 +1,71 @@
-<form class="filterWrapper" (ngSubmit)="onSearch()" autocomplete="off">
-    <!-- <h3>Search Items</h3> -->
-    <input type="text" [(ngModel)]="data" placeholder="Search Item" #searchBar name="input">
-    <button type="submit">{{search? 'Cancel': 'Search'}}</button>
-    <p *ngIf="search && data.length < 2" class="caution">Please Enter More Characters</p>
-</form>
-<button class="startCompare" *ngIf="compareCount > 1 && compareCount < 4" (click)="openComparisonPage()">Compare</button>
-<p class="startCompare cautionMessage" *ngIf="compareCount > 3">Please Select less than 4 Devices to Compare</p>
-<div class="mobileWrapper">
-    <div *ngFor="let array of devices; let i = index" class="Brands">
-        <h2 class="brandName"> {{ brandNames[i] }} Section</h2>
-        <div class="mobileArray">
-            <app-card
-                *ngFor=" let mobile of array | filter:data:search "
-                [deviceData] = mobile
-                class="mobileCard"
-            ></app-card>
-        </div>
+<div class="main">
+  <form class="filterWrapper" (ngSubmit)="onSearch()" autocomplete="off">
+    <input
+      type="text"
+      [(ngModel)]="data"
+      placeholder="Search Item"
+      name="input"
+    />
+    <button type="submit">{{ search ? "Cancel" : "Search" }}</button>
+    <p *ngIf="search && data.length < 2" class="caution">
+      Please Enter More Characters
+    </p>
+  </form>
+  <div class="filter">
+    <h3>Filters</h3>
+    <div class="feature">
+      <input
+        type="checkbox"
+        name="filter1"
+        id="filter1"
+        #ram
+        (click)="filterOut(ram.checked, rom.checked, price.checked)"
+      />&nbsp;
+      <label for="filter1">RAM 6GB & Above</label>
     </div>
-</div>
+    <div class="feature">
+      <input
+        type="checkbox"
+        name="filter2"
+        id="filter2"
+        #rom
+        (click)="filterOut(ram.checked, rom.checked, price.checked)"
+      />&nbsp;
+      <label for="filter2">ROM 128GB & Above</label>
+    </div>
+    <div class="feature">
+      <input
+        type="checkbox"
+        name="filter3"
+        id="filter3"
+        #price
+        (click)="filterOut(ram.checked, rom.checked, price.checked)"
+      />&nbsp;
+      <label for="filter3">Price 40000 & Below</label>
+    </div>
+  </div>
+  <button
+    class="startCompare"
+    *ngIf="compareCount > 1 && compareCount < 4"
+    (click)="openComparisonPage()"
+  >
+    Compare
+  </button>
+  <p class="startCompare cautionMessage" *ngIf="compareCount > 3">
+    Please Select less than 4 Devices to Compare
+  </p>
+  <!-- <div class="count">
+    <label>Device Count:</label>&nbsp;<label>{{ deviceCount }}</label>
+  </div> -->
+  <div class="mobileWrapper">
+    <div class="mobileArray" *ngIf="devices.length">
+      <app-card
+        *ngFor="let mobile of devices | filter: data:search"
+        [deviceData]="mobile"
+        class="mobileCard"
+      ></app-card>
+    </div>
+  </div>
 
-<app-display-card *ngIf="show"></app-display-card>
-<!-- <app-comparison-page></app-comparison-page> -->
-<!-- <app-comparison-component></app-comparison-component> -->
+  <app-display-card *ngIf="show"></app-display-card>
+</div>

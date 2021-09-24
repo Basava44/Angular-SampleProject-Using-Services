@@ -17,9 +17,10 @@ import { CardComponent } from './new-cards/card/card.component';
 import { DisplayCardComponent } from './new-cards/display-card/display-card.component';
 import { ComparisonPageComponent } from './new-cards/comparison-page/comparison-page.component';
 import { ComparisonComponentComponent } from './new-cards/comparison-page/comparison-component/comparison-component.component';
+import { FilterFeaturePipe } from './filter-feature.pipe';
 
 const appRoutes: Routes = [
-  {path:'', redirectTo:'/cards', pathMatch:'full'},
+  {path:'', redirectTo:'/newWindow', pathMatch:'full'},
   {path:'cards', component: MobileCardsComponent },
   {path:'addmobile', component: AddMobileComponent },
   {path:'newWindow', component: NewCardsComponent},
@@ -41,6 +42,7 @@ const appRoutes: Routes = [
     DisplayCardComponent,
     ComparisonPageComponent,
     ComparisonComponentComponent,
+    FilterFeaturePipe,
   ],
   imports: [
     BrowserModule,
