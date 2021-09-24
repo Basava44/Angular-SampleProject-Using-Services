@@ -1,10 +1,11 @@
 <form class="filterWrapper" (ngSubmit)="onSearch()" autocomplete="off">
-    <h5>Search Items</h5>
+    <!-- <h3>Search Items</h3> -->
     <input type="text" [(ngModel)]="data" placeholder="Search Item" #searchBar name="input">
     <button type="submit">{{search? 'Cancel': 'Search'}}</button>
     <p *ngIf="search && data.length < 2" class="caution">Please Enter More Characters</p>
 </form>
 <button class="startCompare" *ngIf="compareCount > 1 && compareCount < 4" (click)="openComparisonPage()">Compare</button>
+<p class="startCompare cautionMessage" *ngIf="compareCount > 3">Please Select less than 4 Devices to Compare</p>
 <div class="mobileWrapper">
     <div *ngFor="let array of devices; let i = index" class="Brands">
         <h2 class="brandName"> {{ brandNames[i] }} Section</h2>
@@ -20,3 +21,4 @@
 
 <app-display-card *ngIf="show"></app-display-card>
 <!-- <app-comparison-page></app-comparison-page> -->
+<!-- <app-comparison-component></app-comparison-component> -->

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { DevicesDataService } from '../devicesData.service';
 
 @Component({
@@ -7,7 +8,9 @@ import { DevicesDataService } from '../devicesData.service';
   styleUrls: ['./new-cards.component.scss'],
 })
 export class NewCardsComponent implements OnInit {
-  constructor(private mobileData: DevicesDataService) {}
+  constructor(private mobileData: DevicesDataService,
+              private router: Router,
+              private route: ActivatedRoute) {}
 
   MobileDataBase: any = this.mobileData.brands;
   devices: any = [];
@@ -35,5 +38,6 @@ export class NewCardsComponent implements OnInit {
   }
 
   openComparisonPage(){
+    this.router.navigate(['compare'],{relativeTo:this.route});
   }
 }

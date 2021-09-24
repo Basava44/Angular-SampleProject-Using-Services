@@ -1,20 +1,81 @@
-.backdrop{
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.75);
-    z-index: 50;
-}
+// .backdrop{
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     width: 100vw;
+//     height: 100vh;
+//     background-color: rgba(0, 0, 0, 0.75);
+//     z-index: 50;
+// }
+
+// .compareMainWrapper{
+//     position: fixed;
+//     top: 5vh;
+//     left: 22vh;
+//     z-index: 100;
+//     background-color: white;
+//     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+//     width: 80%;
+//     height: 90vh;
+// }
+
+// .close{
+//     position: absolute;
+//     top: 5px;
+//     right: 15px;
+//     border: none;
+//     font-size: 35px;
+//     background-color: transparent;
+//     cursor: pointer;
+//     color: black;
+// }
 
 .compareMainWrapper{
+    display: grid;
+    grid-template-columns: 250px auto auto auto;
+}
+
+
+.topicWrapper{
+    display: grid;
+    grid-template-rows: auto repeat(13, 40px);
+    padding: 0 10px;
+}
+
+label{
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 2;
+    overflow: auto;
+    white-space: nowrap;
+}
+
+::-webkit-scrollbar{
+    display: none;
+}
+
+.img{
+    height: 250px;
+    width: 150px;
+    margin: 15px 0;
+    text-align: center;
+    background-color: transparent;
+}
+
+.caution{
+    color: red;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.router{
+    background-color: #06D755;
+    border-radius: 50%;
+    border: none;
+    padding: 5px;
     position: fixed;
-    top: 5vh;
-    left: 22vh;
-    z-index: 100;
-    background-color: white;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-    width: 80%;
-    height: 90vh;
+    right: 55px;
+    bottom: 50px;
+    cursor: pointer;
+    z-index: 200;
 }

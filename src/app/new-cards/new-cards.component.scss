@@ -1,5 +1,6 @@
 .Brands{
     padding: 20px;
+    padding-top: 80px;
     background-color: rgba(128, 128, 128, 0.315);
 }
 
@@ -21,26 +22,42 @@
 
 .filterWrapper{
     position: absolute;
-    right: 0;
-    top: 60px;
-    margin-right: 10px;
+    left: 34%;
 }
 
-.filterWrapper.h5{
+.filterWrapper input{
+    width: 400px;
+    margin-top: 20px;
+    height: 35px;
+    border-radius: 16px;
+    border: none;
+    padding: 10px;
+    border: 1px solid black;
+    & :focus-visible{
+        outline-offset: none;
+    }
+}
+
+.filterWrapper h5{
     margin: 5px 0;
+    margin-left: 10px;
+
+
 }
 
 .filterWrapper button{
     margin: 0 5px;
     border: none;
+    font-weight: bold;
     background-color: transparent;
     cursor: pointer;
 }
 
 .caution{
     color: red;
-    font-size: 12px;
-    margin-top: 5px;
+    font-size: 15px;
+    margin-top: 3px;
+    margin-left: 10px;
 }
 
 .startCompare{
@@ -48,12 +65,18 @@
     margin: 4px;
     cursor: pointer;
     border: none;
-    padding: 8px 10px;
+    padding: 12px 25px;
     border-radius: 4px;
     background-color: #337AB7;
     color: white;
     margin-left: 10px;
     position:fixed;
-    top: 100px;
+    top: 60px;
     right: 20px;
+}
+
+.cautionMessage{
+    color: #5F2120; 
+    font-size: 12px;
+    background-color: #FDEDED;
 }
