@@ -170,7 +170,7 @@ export class DevicesDataService {
       dateOfRelease: '01-01-2018',
       ratings: 4.5,
       ram: '12 GB RAM ',
-      rom: '1 TB ROM',
+      rom: '1024 GB ROM',
       screenSize: '17.02 cm (6.7 inch) Full HD+ Display',
       camera:
         '48MP + | 48MP(F2.0) + 8MP(Ultra Wide/F2.2) + TOF (Time-of-Flight) 3D-Depth Rotating Camera',
@@ -810,14 +810,14 @@ export class DevicesDataService {
     this.comparisionArray = [];
   }
 
-  filterOut(ram: boolean, rom: boolean, price: boolean) {
-    if(!ram && !rom && !price){
+  filterOut(ram: boolean, rom: boolean, price: boolean, devices: any) {
+    if (!ram && !rom && !price) {
       this.alldevices.next(this.brands);
     }
     const resultArray: any = [];
 
     if (price && ram && rom) {
-      this.brands.filter((data: any) => {
+      devices.filter((data: any) => {
         if (
           +data.rom.replace(/\D/g, '') >= 128 &&
           +data.rom.replace(/\D/g, '') >= 6 &&
@@ -829,41 +829,40 @@ export class DevicesDataService {
     }
 
     if (price && !ram && !rom) {
-      this.brands.filter((data: any) => {
+      devices.filter((data: any) => {
         if (data.price <= 40000) resultArray.push(data);
       });
       this.alldevices.next(resultArray);
     }
 
     if (!price && ram && !rom) {
-      this.brands.filter((data: any) => {
-        if(+(data.ram.replace(/\D/g,'')) >= 6)
-          resultArray.push(data);
+      devices.filter((data: any) => {
+        if (+data.ram.replace(/\D/g, '') >= 6) resultArray.push(data);
       });
       this.alldevices.next(resultArray);
     }
     if (!price && !ram && rom) {
-      this.brands.filter((data: any) => {
+      devices.filter((data: any) => {
         if (+data.rom.replace(/\D/g, '') >= 128) resultArray.push(data);
       });
       this.alldevices.next(resultArray);
     }
-    if(price && ram && !rom){
-      this.brands.filter((data: any) => {
+    if (price && ram && !rom) {
+      devices.filter((data: any) => {
         if (+data.ram.replace(/\D/g, '') >= 6 && data.price <= 40000)
           resultArray.push(data);
       });
       this.alldevices.next(resultArray);
     }
     if (price && !ram && rom) {
-      this.brands.filter((data: any) => {
+      devices.filter((data: any) => {
         if (+data.rom.replace(/\D/g, '') >= 128 && data.price <= 40000)
           resultArray.push(data);
       });
       this.alldevices.next(resultArray);
     }
     if (!price && ram && rom) {
-      this.brands.filter((data: any) => {
+      devices.filter((data: any) => {
         if (
           +data.rom.replace(/\D/g, '') >= 128 &&
           +data.rom.replace(/\D/g, '') >= 6
@@ -871,6 +870,65 @@ export class DevicesDataService {
           resultArray.push(data);
       });
       this.alldevices.next(resultArray);
+    }
+  }
+
+  sortItems(type: string, data: any) {
+    switch (type) {
+      case 'priceLTH': {
+        data.sort(function(a: any,b: any){
+          return a.price - b.price;
+        })
+        this.alldevices.next(data);
+        break;
+      }
+      case 'priceHTL': {
+        data.sort(function (a: any, b: any) {
+          return b.price - a.price;
+        });
+        this.alldevices.next(data);
+        break;
+      }
+      case 'ramLTH': {
+        data.sort(function(a: any, b: any){
+          const x = +a.ram.replace(/\D/g, '');
+          const y = +b.ram.replace(/\D/g, '');
+          return x < y ? -1 : x > y ? 1 : 0;
+        })
+        this.alldevices.next(data);
+        break;
+      }
+      case 'ramHTL': {
+        data.sort(function (a: any, b: any) {
+          const y = +a.ram.replace(/\D/g, '');
+          const x = +b.ram.replace(/\D/g, '');
+          return x < y ? -1 : x > y ? 1 : 0;
+        });
+        this.alldevices.next(data);
+        break;
+      }
+      case 'romLTH': {
+        data.sort(function (a: any, b: any) {
+          const x = +a.rom.replace(/\D/g, '');
+          const y = +b.rom.replace(/\D/g, '');
+          return x < y ? -1 : x > y ? 1 : 0;
+        });
+        this.alldevices.next(data);
+        break;
+      }
+      case 'romHTL': {
+        data.sort(function (a: any, b: any) {
+          const y = +a.rom.replace(/\D/g, '');
+          const x = +b.rom.replace(/\D/g, '');
+          return x < y ? -1 : x > y ? 1 : 0;
+        });
+        this.alldevices.next(data);
+        break;
+      }
+      default: {
+        this.alldevices.next(data);
+        break;
+      }
     }
   }
 }

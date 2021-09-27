@@ -11,12 +11,13 @@
       Please Enter More Characters
     </p>
   </form>
-  <div class="filter">
+  <div class="filter" #filter>
     <h3>Filters</h3>
     <div class="feature">
       <input
         type="checkbox"
         name="filter1"
+        class="filterOption"
         id="filter1"
         #ram
         (click)="filterOut(ram.checked, rom.checked, price.checked)"
@@ -27,6 +28,7 @@
       <input
         type="checkbox"
         name="filter2"
+        class="filterOption"
         id="filter2"
         #rom
         (click)="filterOut(ram.checked, rom.checked, price.checked)"
@@ -37,6 +39,7 @@
       <input
         type="checkbox"
         name="filter3"
+        class="filterOption"
         id="filter3"
         #price
         (click)="filterOut(ram.checked, rom.checked, price.checked)"
@@ -54,9 +57,18 @@
   <p class="startCompare cautionMessage" *ngIf="compareCount > 3">
     Please Select less than 4 Devices to Compare
   </p>
-  <!-- <div class="count">
-    <label>Device Count:</label>&nbsp;<label>{{ deviceCount }}</label>
-  </div> -->
+  <div class="sort">
+    <h3>Sort By:</h3>
+    <select name="sort" id="sort" (click)=sortItems(sort) #sort>
+      <option value="-">Default View</option>
+      <option value="priceLTH">Price - Low to High</option>
+      <option value="ramLTH">RAM - Low to High</option>
+      <option value="romLTH">ROM - Low to High</option>
+      <option value="priceHTL">Price - High to Low</option>
+      <option value="ramHTL">RAM - High to Low</option>
+      <option value="romHTL">ROM - High to Low</option>
+    </select>
+  </div>
   <div class="mobileWrapper">
     <div class="mobileArray" *ngIf="devices.length">
       <app-card

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DevicesDataService } from '../devicesData.service';
 import { MobileServices } from '../mobile-data.service';
@@ -44,6 +44,12 @@ export class NewCardsComponent implements OnInit {
   }
 
   filterOut(ram: boolean, rom: boolean, price: boolean){
-    this.mobileData.filterOut(ram, rom, price);
+    this.mobileData.filterOut(ram, rom, price, this.devices);
   }
+
+  sortItems(sort: HTMLSelectElement){
+    this.mobileData.sortItems(sort.value, this.devices);
+  }
+
+
 }

@@ -9,7 +9,7 @@
 }
 
 .mobileArray{
-    padding-top: 100px;
+    padding-top: 170px;
     padding-left: 20px;
     display: inline-flex;
     flex-wrap: wrap;
@@ -28,7 +28,6 @@
     width: 400px;
     margin-top: 20px;
     height: 35px;
-    // border-radius: 16px;
     padding: 10px;
     border: 1px solid black;
     & :focus-visible{
@@ -106,4 +105,18 @@
     font-weight: bold;
     padding: 140px 0 0 60px;
     font-size: 20px;
+}
+
+.sort{
+    position: absolute;
+    left: 20px;
+    top: 145px;
+    padding: 10px;;
+}
+
+select{
+    outline: none;
+    border: 1px solid black;
+    margin-top: 4px;
+    cursor: pointer;
 }
