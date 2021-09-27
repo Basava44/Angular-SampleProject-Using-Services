@@ -6,7 +6,7 @@
       placeholder="Search Item"
       name="input"
     />
-    <button type="submit">{{ search ? "Cancel" : "Search" }}</button>
+    <button type="submit" title="Search Items">{{ search ? "Cancel" : "Search" }}</button>
     <p *ngIf="search && data.length < 2" class="caution">
       Please Enter More Characters
     </p>

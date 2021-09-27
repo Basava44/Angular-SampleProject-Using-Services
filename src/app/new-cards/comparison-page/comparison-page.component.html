@@ -1,28 +1,29 @@
-
 <div class="compareMainWrapper">
-    <div class="topicWrapper" *ngIf="compareData.length > 0">
-        <div class="img"></div>
-        <label class="name">Model Name</label>
-        <label class="modelNumber">Model Number</label>
-        <label class="price">Price</label>
-        <label class="color">Model Color</label>
-        <label class="ram">RAM of the Device</label>
-        <label class="rom">ROM of the Device</label>
-        <label class="camera">Camera Specification</label>
-        <label class="battery">Battery</label>
-        <label class="rating">Rating</label>
-        <label class="processor">Processor Type</label>
-        <label class="screenSize">Screen Size</label>
-        <label class="date">Date of Release</label>
-        <label class="simType">Sim Type</label>
-        <label class="otg_Compatible">OTG Compatibility</label> 
-    </div>
-    <app-comparison-component
-        *ngFor="let i of compareData"
-        [mobiledata] = i
-    ></app-comparison-component>
+  <div class="topicWrapper" *ngIf="compareData.length > 0">
+    <div class="img"></div>
+    <label class="name">Model Name</label>
+    <label class="modelNumber">Model Number</label>
+    <label class="price">Price</label>
+    <label class="color">Model Color</label>
+    <label class="ram">RAM of the Device</label>
+    <label class="rom">ROM of the Device</label>
+    <label class="camera">Camera Specification</label>
+    <label class="battery">Battery</label>
+    <label class="rating">Rating</label>
+    <label class="processor">Processor Type</label>
+    <label class="screenSize">Screen Size</label>
+    <label class="date">Date of Release</label>
+    <label class="simType">Sim Type</label>
+    <label class="otg_Compatible">OTG Compatibility</label>
+  </div>
+  <app-comparison-component
+    *ngFor="let i of compareData"
+    [mobiledata]="i"
+  ></app-comparison-component>
 </div>
-<h2 *ngIf="compareData.length === 0" class="caution">Please Select Devices to Compare</h2>
+<h2 *ngIf="compareData.length === 0" class="caution">
+  Please Select Devices to Compare
+</h2>
 <button (click)="gotoMainPage()" class="router">
-    <img src="../../../assets/outline_reply_black_24dp.png" alt="">
+  <span class="material-icons"> reply </span>
 </button>
