@@ -11,17 +11,6 @@ export class CardComponent {
 
   @Input() deviceData: any = [];
 
-  count: number = 0;
-
-  // ngOnInit(){
-  //   this.deviceDataService.compareCount.subscribe(
-  //     data => {
-  //       this.count = data;
-  //       console.log(data);
-  //     }
-  //   )
-  // }
-
   async display() {
     this.deviceDataService.show.next(true);
     await setTimeout(() => {
@@ -31,13 +20,11 @@ export class CardComponent {
 
   selected: boolean = false;
 
-  selectedItem(){
-    this.selected = ! this.selected;
-    if(this.selected)
-    {
+  selectedItem() {
+    this.selected = !this.selected;
+    if (this.selected) {
       this.deviceDataService.addToCompare(this.deviceData);
-    }
-    else{
+    } else {
       this.deviceDataService.removeFromCompare(this.deviceData);
     }
   }
