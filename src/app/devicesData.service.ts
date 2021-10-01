@@ -926,6 +926,9 @@ export class DevicesDataService {
         break;
       }
       default: {
+        // data.sort(function(a: any, b: any){
+        //   return 0.5 - Math.random();
+        // })
         this.alldevices.next(data);
         break;
       }
