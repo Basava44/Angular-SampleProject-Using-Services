@@ -3,6 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 
 import { AppComponent } from './app.component';
 import { CountComponent } from './mobile-cards/count/count.component';
@@ -18,6 +19,9 @@ import { DisplayCardComponent } from './new-cards/display-card/display-card.comp
 import { ComparisonPageComponent } from './new-cards/comparison-page/comparison-page.component';
 import { ComparisonComponentComponent } from './new-cards/comparison-page/comparison-component/comparison-component.component';
 import { FilterFeaturePipe } from './filter-feature.pipe';
+import { MyntraComponent } from './myntra/myntra.component';
+import { ProductItemComponent } from './myntra/product-item/product-item.component';
+import { ProductDisplayComponent } from './myntra/product-display/product-display.component';
 
 const appRoutes: Routes = [
   {path:'', redirectTo:'/newWindow', pathMatch:'full'},
@@ -25,6 +29,8 @@ const appRoutes: Routes = [
   {path:'addmobile', component: AddMobileComponent },
   {path:'newWindow', component: NewCardsComponent},
   {path:'newWindow/compare', component: ComparisonPageComponent},
+  {path:'myntra', component: MyntraComponent},
+  {path:'myntra/product/:id', component:ProductDisplayComponent},
 ]
 
 @NgModule({
@@ -43,12 +49,16 @@ const appRoutes: Routes = [
     ComparisonPageComponent,
     ComparisonComponentComponent,
     FilterFeaturePipe,
+    MyntraComponent,
+    ProductItemComponent,
+    ProductDisplayComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

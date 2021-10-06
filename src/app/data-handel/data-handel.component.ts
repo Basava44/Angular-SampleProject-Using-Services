@@ -1,4 +1,5 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { DataServices } from '../dataServices.service';
 import { MobileServices } from '../mobile-data.service';
 
@@ -8,16 +9,17 @@ import { MobileServices } from '../mobile-data.service';
   styleUrls: ['./data-handel.component.scss'],
 })
 
-export class DataHandelComponent implements OnInit {
+export class DataHandelComponent implements OnInit, OnDestroy {
   constructor(
     private DataServices: DataServices,
     private MobileServices: MobileServices
   ) {}
 
   disable = false;
+  subscription! : Subscription;
 
   ngOnInit(){
-    this.MobileServices.count.subscribe(
+   this.subscription =  this.MobileServices.count.subscribe(
       data => {
         this.disable = data>0 ? false : true;
       }
@@ -35,5 +37,9 @@ export class DataHandelComponent implements OnInit {
 
   update() {
     this.MobileServices.fetchData();
+  }
+
+  ngOnDestroy(){
+    this.subscription.unsubscribe();
   }
 }

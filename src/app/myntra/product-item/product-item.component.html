@@ -1,0 +1,23 @@
+<div
+  class="item"
+  title="{{ product.name +' '+product.type }}"
+  (mouseover)="mouseHover()"
+  (mouseout)="mouseOut()"
+>
+  <img
+    [src]="product.imgPath"
+    alt="{{ product.name }}"
+    (click)="productPreview()"
+  />
+  <div class="details">
+    <span class="productAction" *ngIf="hover">&hearts; wishlist</span>
+    <h3 class="productName" *ngIf="!hover">{{ product.name }}</h3>
+    <span class="productSizes" *ngIf="hover">Sizes: S,M,L,XL,XXL</span>
+    <h4 class="productType" *ngIf="!hover">{{ product.type }}</h4>
+    <div class="priceDetail">
+      <span class="price"> {{ product.price | currency: "Rs. " }}</span>
+      <span class="oldPrice">{{ product.oldPrice | currency: "Rs. " }}</span>
+      <span class="offer">({{ product.offer }})</span>
+    </div>
+  </div>
+</div>

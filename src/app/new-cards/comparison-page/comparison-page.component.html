@@ -17,8 +17,8 @@
     <label class="otg_Compatible">OTG Compatibility</label>
   </div>
   <app-comparison-component
-    *ngFor="let i of compareData"
-    [mobiledata]="i"
+    *ngFor="let data of compareData"
+    [mobiledata]="data"
   ></app-comparison-component>
 </div>
 <h2 *ngIf="compareData.length === 0" class="caution">

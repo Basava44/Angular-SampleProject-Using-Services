@@ -57,6 +57,10 @@
     border-top-right-radius: 16px;
 }
 
+.filterWrapper button:disabled:hover{
+    cursor:not-allowed;
+}
+
 .caution{
     color: red;
     font-size: 15px;

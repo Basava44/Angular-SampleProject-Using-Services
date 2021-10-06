@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -8,16 +9,20 @@ import { MobileServices } from '../mobile-data.service';
   templateUrl: './add-mobile.component.html',
   styleUrls: ['./add-mobile.component.scss'],
 })
-export class AddMobileComponent {
+export class AddMobileComponent{
   @ViewChild('form', { static: true }) submitData!: NgForm;
 
-  constructor(private route: Router, private Data: MobileServices) {}
+  constructor(
+    private route: Router,
+    private Data: MobileServices,
+    private http: HttpClient,
+  ) {}
 
   onSubmit() {
     this.dataValidation();
     if (this.submitData.valid) {
       this.Data.addData(this.submitData.value);
-      this.route.navigate(['/']);
+      this.route.navigate(['/cards']);
     }
   }
 

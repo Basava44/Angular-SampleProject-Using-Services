@@ -1,0 +1,300 @@
+.product {
+  background-color: white;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.images {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.images img {
+  height: 450px;
+  width: 310px;
+  margin: 12px;
+  cursor: zoom-in;
+}
+
+.images img:hover {
+  box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+    rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+    rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+.details {
+  padding: 25px;
+}
+
+.productName {
+  color: #282c3f;
+  padding: 0 20px 0 0;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.productTitle {
+  color: #535665;
+  padding: 5px 20px 14px 0;
+  font-size: 20px;
+  opacity: 0.8;
+  font-weight: 400;
+}
+
+.priceSection {
+  margin: 8px 0;
+}
+
+.price {
+  color: #282c3f;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.oldPrice {
+  text-decoration: line-through;
+  color: #7e818c;
+  font-weight: 400;
+  margin-left: 5px;
+  font-size: 20px;
+}
+
+.offer {
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: #ff905a;
+  margin-left: 5px;
+}
+
+.taxes {
+  color: #03a685;
+  font-weight: 500;
+  font-size: 14px;
+  display: block;
+  margin: 8px 10px 5px 0;
+}
+
+.sizeWrapper {
+  display: inline-block;
+  font-size: 16px;
+  margin: 0;
+  font-weight: 500;
+  margin-top: 20px;
+}
+
+.sizes {
+  display: flex;
+  list-style: none;
+  margin-top: 10px;
+}
+
+.sizes button {
+  border: 1px solid #bfc0c6;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 12px;
+  min-width: 50px;
+  height: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #282c3f;
+  margin: 5px;
+  background-color: white;
+}
+
+.sizes button:hover {
+  border: 1px solid #ff3f6c;
+}
+
+.sizes button:focus {
+  border-color: #ff3f6c;
+  color: #ff3f6c;
+}
+
+.purchase {
+  margin: 25px 0;
+}
+
+.purchase button {
+  border-radius: 6px;
+  font-size: 16px;
+  padding: 10px 20px;
+}
+
+.addBag {
+  border-radius: 0;
+  padding: 12px 15px;
+  min-width: 128px;
+  font-weight: 500;
+  cursor: pointer;
+  background-color: #ff3e6c;
+  border: 1px solid #ff3e6c;
+  color: #fff;
+  text-align: center;
+  margin-right: 10px;
+  i {
+    font-size: 16px;
+    margin-right: 5px;
+  }
+}
+
+.wishlist {
+  border-radius: 0;
+  padding: 12px 15px;
+  font-weight: 500;
+  cursor: pointer;
+  border: 1px solid #d4d5d9;
+  background-color: #fff;
+  color: #282c3f;
+  margin-left: 10px;
+}
+
+.priceDetail {
+  padding: 10px 4px;
+}
+
+.priceDetail .price {
+  font-size: 16px;
+  color: #282c3f;
+  font-weight: bold;
+}
+
+.priceDetail .oldPrice {
+  text-decoration: line-through;
+  color: #7e818c;
+  font-weight: 400;
+  margin-left: 5px;
+  font-size: 14px;
+}
+
+.priceDetail .offer {
+  color: #ff905a;
+  font-weight: 400;
+  font-size: 14px;
+  margin-left: 5px;
+}
+
+.seller {
+  color: #ff3e6c;
+}
+
+.shippingTime {
+  margin: 6px 0;
+}
+
+.delivery {
+  margin: 15px 0;
+}
+
+.delivery .title {
+  color: #282c3f;
+  font-size: 16px;
+  margin: 0;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+ul li i {
+  font-size: 18px;
+  margin-right: 5px;
+  align-items: center;
+}
+
+.delivery ul {
+  list-style: none;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.delivery li {
+  font-weight: bold;
+  color: #282c3f;
+  font-size: 16px;
+  line-height: 1.8;
+  padding-left: 10px;
+}
+
+.cherish {
+  margin: 10px 0;
+}
+
+hr {
+  margin: 5px 0;
+}
+
+.productDetails .detailsWrapper {
+  margin: 10px 0;
+  padding: 10px 15px;
+  ul {
+    list-style: none;
+  }
+}
+
+.productDetails .title {
+  color: #282c3f;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.productDetails .description {
+  color: #282c3f;
+  line-height: 1.4;
+  font-size: 16px;
+  margin-top: 8px;
+  width: 84%;
+}
+
+.router {
+  background-color: #ff3e6c;
+  color: white;
+  border-radius: 50%;
+  border: none;
+  padding: 5px;
+  position: fixed;
+  right: 55px;
+  bottom: 50px;
+  cursor: pointer;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: -1;
+}
+
+.imageDisplay {
+  position: absolute;
+  top: 10%;
+  left: 33%;
+  img {
+    width: 410px;
+    height: 560px;
+  }
+  z-index: 10;
+}
+
+.imageDisplay .close {
+  position: absolute;
+  top: 0;
+  right: 10px;
+  border: none;
+  font-size: 40px;
+  background-color: transparent;
+  cursor: pointer;
+  color: white;
+  z-index: 100;
+}
+
+.imageDisplay .close:hover {
+  color: red;
+}

@@ -1,0 +1,102 @@
+<div class="product">
+  <div class="images">
+    <img
+      *ngFor="let image of product.images"
+      [src]="image"
+      alt="{{ product.name }}"
+      (click)="openImage(image)"
+    />
+  </div>
+  <div class="details">
+    <h1 class="productName">{{ product.name }}</h1>
+    <h2 class="productTitle">{{ product.type }}</h2>
+    <hr />
+    <div class="priceSection">
+      <span class="price">{{ product.price | currency: "Rs. " }}</span>
+      <span class="oldPrice">{{ product.oldPrice | currency: "Rs. " }}</span>
+      <span class="offer">({{ product.offer }} OFF)</span>
+    </div>
+    <h4 class="taxes">inclusive of all taxes</h4>
+    <div class="sizeWrapper">
+      <h4 class="title">SELECT SIZE</h4>
+      <ul class="sizes">
+        <button>S</button>
+        <button>M</button>
+        <button>L</button>
+        <button>XL</button>
+        <button>XXL</button>
+      </ul>
+    </div>
+    <div class="purchase">
+      <button class="addBag"> <i class="material-icons">shopping_bag</i> ADD TO BAG</button>
+      <button class="wishlist">&hearts; WISHLIST</button>
+    </div>
+    <hr />
+    <div class="priceDetail">
+      <span class="price"> {{ product.price | currency: "Rs. " }}</span>
+      <span class="oldPrice">{{ product.oldPrice | currency: "Rs. " }}</span>
+      <span class="offer">({{ product.offer }})</span>
+      <div class="shippingTime">Get it by Mon, Oct 11 - 583201</div>
+      Seller: <span class="seller">Omnitech Retail</span>
+    </div>
+    <hr />
+    <div class="delivery">
+      <div class="title">Delivery Options</div>
+      <ul>
+        <li><i class="material-icons">local_shipping</i>Get it by Mon, Oct 11</li>
+        <li><i class="material-icons">payments</i>Pay on delivery available</li>
+        <li><i class="material-icons">swap_horiz</i>Easy 30 days return & exchange available</li>
+      </ul>
+    </div>
+    <div class="cherish">100% Original Products</div>
+    <hr />
+    <div class="productDetails">
+      <div class="detailsWrapper">
+        <div class="title">Product Details</div>
+        <div class="description">
+          This season set a sporty fashion trend with the HRX Men's Athleisure
+          T-shirt. This striped casual T-shirt can be worn on its own or layered
+          under a jacket or a hoodie
+        </div>
+      </div>
+      <div class="detailsWrapper">
+        <div class="title">Features</div>
+        <div class="description">
+          <ul>
+              <li>Athleisure T-shirt can be paired with tracks, khakis or jeans</li>
+              <li>Style: Round Neck</li>
+              <li>Sleeve: Short Sleeves</li>
+              <li>Colour: Teal</li>
+              <li>Print: Geometric</li>
+              <li>Fit: Regular</li>
+          </ul>
+        </div>
+      </div>
+      <div class="detailsWrapper">
+        <div class="title">Size & Fit</div>
+        <div class="description">
+          The model (height 6') is wearing a size M
+        </div>
+      </div>
+      <div class="detailsWrapper">
+        <div class="title">Material & Care</div>
+        <div class="description">
+          <ul>
+              <li>100% cotton</li>
+              <li>Machine-wash</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button (click)="gotoMainPage()" class="router">
+  <span class="material-icons"> reply </span>
+</button>
+
+<div class="imageDisplay" *ngIf="displayImage">
+    <div class="backdrop"></div>
+    <img [src]="displayImageSrc">
+    <button class="close" (click)="closeImage()">&times;</button>
+</div>

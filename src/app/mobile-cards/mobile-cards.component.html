@@ -7,7 +7,7 @@
     <button type="submit">{{search? 'Cancel': 'Search'}}</button>
     <p *ngIf="search && data.length < 2" class="caution">Please Enter More Characters</p>
   </form>
-  <app-count></app-count>
+  <app-count #me></app-count>
   <p *ngIf="searchCount==0">No Cards</p>
   <div class="cardContainer">
     <app-mobile-card

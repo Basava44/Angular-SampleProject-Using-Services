@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { DevicesDataService } from 'src/app/devicesData.service';
 
 @Component({
@@ -6,18 +7,23 @@ import { DevicesDataService } from 'src/app/devicesData.service';
   templateUrl: './display-card.component.html',
   styleUrls: ['./display-card.component.scss'],
 })
-export class DisplayCardComponent implements OnInit {
+export class DisplayCardComponent implements OnInit, OnDestroy {
   constructor(private deviceDataService: DevicesDataService) {}
 
   deviceData: any = {};
+  subscription!: Subscription;
 
   ngOnInit(): void {
-    this.deviceDataService.selectedDevice.subscribe((data) => {
+    this.subscription = this.deviceDataService.selectedDevice.subscribe((data) => {
       this.deviceData = data;
     });
   }
 
-  close(){
+  close() {
     this.deviceDataService.show.next(false);
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
   }
 }

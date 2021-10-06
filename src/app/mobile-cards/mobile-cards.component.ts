@@ -1,4 +1,5 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { MobileServices } from '../mobile-data.service';
 import { MobileData } from '../mobileData.module';
 
@@ -7,16 +8,17 @@ import { MobileData } from '../mobileData.module';
   templateUrl: './mobile-cards.component.html',
   styleUrls: ['./mobile-cards.component.scss'],
 })
-export class MobileCardsComponent implements OnInit {
+export class MobileCardsComponent implements OnInit, OnDestroy {
   devices: MobileData[] = [];
 
-  data:string = '';
+  data: string = '';
   search: boolean = false;
-  searchCount!:number;
+  searchCount!: number;
+  subscription!: Subscription;
 
-  @ViewChild('searchBar',{static:false}) bar!: ElementRef;
+  @ViewChild('searchBar', { static: false }) bar!: ElementRef;
 
-  onSearch(){
+  onSearch() {
     this.search = !this.search;
     console.log(this.bar.nativeElement.value);
   }
@@ -26,9 +28,12 @@ export class MobileCardsComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.Data.mobileData.subscribe((data) => {
+    this.subscription = this.Data.mobileData.subscribe((data) => {
       this.devices = data;
     });
   }
 
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
 }
