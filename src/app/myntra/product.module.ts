@@ -1,4 +1,5 @@
 export interface Product {
+  id: number,
   name: string;
   type: string;
   price: number;
@@ -6,4 +7,6 @@ export interface Product {
   images: string[];
   oldPrice: number;
   offer: string;
+  wishlist: boolean;
+  cart: boolean;
 }

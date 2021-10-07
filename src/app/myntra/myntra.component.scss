@@ -1,5 +1,21 @@
-.products{
-    display: flex;
-    flex-wrap: wrap;
-    padding: 20px;
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  margin-top: 30px;
 }
+
+.bag {
+  display: flex;
+  position: absolute;
+  margin-top: 10px;
+  right: 30px;
+  align-items: center;
+  text-align: center;
+}
+
+.bag div{
+    margin: 0 20px;
+    cursor: pointer;
+}
+

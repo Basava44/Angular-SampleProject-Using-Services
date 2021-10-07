@@ -1,0 +1,73 @@
+.wishlistWrapper {
+  margin: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  border: 1px solid #7e818c;
+  width: auto;
+  background-color: white;
+  margin: 20px;
+}
+
+.priceDetail {
+  margin: 5px 0;
+  text-align: center;
+}
+
+.price {
+  font-size: 16px;
+  color: #282c3f;
+  font-weight: bold;
+}
+
+.oldPrice {
+  text-decoration: line-through;
+  color: #7e818c;
+  font-weight: 400;
+  margin: 0 5px;
+  font-size: 14px;
+}
+
+.offer {
+  color: #ff905a;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.button {
+  text-align: center;
+  margin-top: 15px;
+  padding: 10px;
+  color: #ff3f6c;
+  font-weight: bold;
+  border-top: 1px solid #7e818c;
+  cursor: pointer;
+}
+
+img {
+  height: 280px;
+  width: 210px;
+}
+
+.close{
+    background: transparent;
+    border: none;
+    position: absolute;
+    font-size: 24px;
+    height: 30px;
+    width: 30px;
+    color: white;
+    cursor: pointer;
+    margin-left: 180px;    
+}
+
+.close:hover{
+    color: #ff3f6c;
+}
+
+.noItem{
+    text-align: center;
+    color: red;
+}

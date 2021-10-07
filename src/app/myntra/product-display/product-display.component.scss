@@ -5,8 +5,8 @@
 }
 
 .images {
-  display: flex;
-  flex-wrap: wrap;
+  // display: flex;
+  // flex-wrap: wrap;
 }
 
 .images img {
@@ -124,6 +124,8 @@
   border-radius: 6px;
   font-size: 16px;
   padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .addBag {
@@ -131,7 +133,6 @@
   padding: 12px 15px;
   min-width: 128px;
   font-weight: 500;
-  cursor: pointer;
   background-color: #ff3e6c;
   border: 1px solid #ff3e6c;
   color: #fff;
@@ -144,14 +145,8 @@
 }
 
 .wishlist {
-  border-radius: 0;
-  padding: 12px 15px;
-  font-weight: 500;
-  cursor: pointer;
-  border: 1px solid #d4d5d9;
-  background-color: #fff;
-  color: #282c3f;
-  margin-left: 10px;
+  background-color: white;
+  border: 1px solid #bfc0c6;
 }
 
 .priceDetail {
@@ -296,5 +291,10 @@ hr {
 }
 
 .imageDisplay .close:hover {
-  color: red;
+  color: #ff3e6c;
+}
+
+.wishlistAdded {
+  background-color: #535766;
+  color: white;
 }

@@ -22,16 +22,20 @@ import { FilterFeaturePipe } from './filter-feature.pipe';
 import { MyntraComponent } from './myntra/myntra.component';
 import { ProductItemComponent } from './myntra/product-item/product-item.component';
 import { ProductDisplayComponent } from './myntra/product-display/product-display.component';
+import { BagComponent } from './myntra/bag/bag.component';
+import { WishlistComponent } from './myntra/wishlist/wishlist.component';
 
 const appRoutes: Routes = [
-  {path:'', redirectTo:'/newWindow', pathMatch:'full'},
-  {path:'cards', component: MobileCardsComponent },
-  {path:'addmobile', component: AddMobileComponent },
-  {path:'newWindow', component: NewCardsComponent},
-  {path:'newWindow/compare', component: ComparisonPageComponent},
-  {path:'myntra', component: MyntraComponent},
-  {path:'myntra/product/:id', component:ProductDisplayComponent},
-]
+  { path: '', redirectTo: '/newWindow', pathMatch: 'full' },
+  { path: 'cards', component: MobileCardsComponent },
+  { path: 'addmobile', component: AddMobileComponent },
+  { path: 'newWindow', component: NewCardsComponent },
+  { path: 'newWindow/compare', component: ComparisonPageComponent },
+  { path: 'myntra', component: MyntraComponent },
+  { path: 'myntra/product/:id', component: ProductDisplayComponent },
+  { path: 'myntra/bag', component: BagComponent },
+  { path: 'myntra/wishlist', component: WishlistComponent },
+];
 
 @NgModule({
   declarations: [
@@ -51,7 +55,9 @@ const appRoutes: Routes = [
     FilterFeaturePipe,
     MyntraComponent,
     ProductItemComponent,
-    ProductDisplayComponent
+    ProductDisplayComponent,
+    BagComponent,
+    WishlistComponent
   ],
   imports: [
     BrowserModule,

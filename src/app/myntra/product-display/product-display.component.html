@@ -28,8 +28,19 @@
       </ul>
     </div>
     <div class="purchase">
-      <button class="addBag"> <i class="material-icons">shopping_bag</i> ADD TO BAG</button>
-      <button class="wishlist">&hearts; WISHLIST</button>
+      <button class="addBag">
+        <span *ngIf="!product.cart else carted" (click)="addToBag()" ><i class="material-icons">shopping_bag</i> ADD TO BAG</span>
+        <ng-template #carted>
+            <span (click)="goToBag()"><i class="material-icons">shopping_bag</i> Go To Bag</span>
+        </ng-template>
+      </button>
+      <button
+        class="wishlist"
+        [class.wishlistAdded]="product.wishlist"
+        (click)="addToWishlist()"
+      >
+        &hearts; WISHLIST
+      </button>
     </div>
     <hr />
     <div class="priceDetail">
@@ -43,9 +54,14 @@
     <div class="delivery">
       <div class="title">Delivery Options</div>
       <ul>
-        <li><i class="material-icons">local_shipping</i>Get it by Mon, Oct 11</li>
+        <li>
+          <i class="material-icons">local_shipping</i>Get it by Mon, Oct 11
+        </li>
         <li><i class="material-icons">payments</i>Pay on delivery available</li>
-        <li><i class="material-icons">swap_horiz</i>Easy 30 days return & exchange available</li>
+        <li>
+          <i class="material-icons">swap_horiz</i>Easy 30 days return & exchange
+          available
+        </li>
       </ul>
     </div>
     <div class="cherish">100% Original Products</div>
@@ -63,27 +79,27 @@
         <div class="title">Features</div>
         <div class="description">
           <ul>
-              <li>Athleisure T-shirt can be paired with tracks, khakis or jeans</li>
-              <li>Style: Round Neck</li>
-              <li>Sleeve: Short Sleeves</li>
-              <li>Colour: Teal</li>
-              <li>Print: Geometric</li>
-              <li>Fit: Regular</li>
+            <li>
+              Athleisure T-shirt can be paired with tracks, khakis or jeans
+            </li>
+            <li>Style: Round Neck</li>
+            <li>Sleeve: Short Sleeves</li>
+            <li>Colour: Teal</li>
+            <li>Print: Geometric</li>
+            <li>Fit: Regular</li>
           </ul>
         </div>
       </div>
       <div class="detailsWrapper">
         <div class="title">Size & Fit</div>
-        <div class="description">
-          The model (height 6') is wearing a size M
-        </div>
+        <div class="description">The model (height 6') is wearing a size M</div>
       </div>
       <div class="detailsWrapper">
         <div class="title">Material & Care</div>
         <div class="description">
           <ul>
-              <li>100% cotton</li>
-              <li>Machine-wash</li>
+            <li>100% cotton</li>
+            <li>Machine-wash</li>
           </ul>
         </div>
       </div>
@@ -96,7 +112,6 @@
 </button>
 
 <div class="imageDisplay" *ngIf="displayImage">
-    <div class="backdrop"></div>
-    <img [src]="displayImageSrc">
-    <button class="close" (click)="closeImage()">&times;</button>
+  <img [src]="displayImageSrc" />
+  <button class="close" (click)="closeImage()">&times;</button>
 </div>

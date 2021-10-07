@@ -7,7 +7,7 @@
   cursor: pointer;
 }
 
-.item:hover{
+.item:hover {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
 
@@ -85,8 +85,15 @@
   background-color: white;
   text-transform: uppercase;
   cursor: pointer;
+  font-weight: bold;
 }
 
 .priceDetail {
   margin-top: 5px;
+}
+
+.wishlist {
+  background-color: #535766;
+  color: white;
+  font-weight: bold;
 }

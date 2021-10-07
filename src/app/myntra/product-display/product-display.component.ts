@@ -18,10 +18,12 @@ export class ProductDisplayComponent implements OnInit {
   product!: Product;
   displayImage: boolean = false;
   displayImageSrc: string = '';
+  index!: number;
 
   ngOnInit(): void {
     this.route.params.subscribe((data) => {
       this.product = this.productService.getProduct(data.id);
+      this.index = data.id;
     });
     if (!this.product) {
       this.router.navigate(['/myntra']);
@@ -37,8 +39,22 @@ export class ProductDisplayComponent implements OnInit {
     this.displayImage = true;
   }
 
-  closeImage(){
+  closeImage() {
     this.displayImage = false;
     this.displayImageSrc = '';
+  }
+
+  addToWishlist() {
+    this.productService.addToWishlist(this.index - 1);
+  }
+
+  addToBag() {
+    this.productService.addToCart(this.index - 1);
+  }
+
+  goToBag(){
+    // this.router.navigate(['/myntra','bag']);
+    // console.log('Go To Bag');
+    this.router.navigate(['/myntra','wishlist']);
   }
 }

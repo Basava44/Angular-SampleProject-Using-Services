@@ -1,6 +1,6 @@
 <div
   class="item"
-  title="{{ product.name +' '+product.type }}"
+  title="{{ product.name + ' ' + product.type }}"
   (mouseover)="mouseHover()"
   (mouseout)="mouseOut()"
 >
@@ -10,7 +10,13 @@
     (click)="productPreview()"
   />
   <div class="details">
-    <span class="productAction" *ngIf="hover">&hearts; wishlist</span>
+    <span
+      class="productAction"
+      *ngIf="hover"
+      [class.wishlist]="product.wishlist"
+      (click)="addToWishlist()"
+      >&hearts; wishlist</span
+    >
     <h3 class="productName" *ngIf="!hover">{{ product.name }}</h3>
     <span class="productSizes" *ngIf="hover">Sizes: S,M,L,XL,XXL</span>
     <h4 class="productType" *ngIf="!hover">{{ product.type }}</h4>
