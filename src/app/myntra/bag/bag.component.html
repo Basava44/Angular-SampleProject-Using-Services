@@ -1,1 +1,36 @@
-<h1>Bag</h1>
+<div class="bagWrapper" *ngIf="products.length">
+  <div class="mainTitle">Your Products:</div>
+  <div class="products" >
+    <div class="productDetails" *ngFor="let product of products">
+      <div class="image">
+        <img [src]="product.imgPath" alt="{{ product.name }}" />
+      </div>
+      <div class="details">
+        <p class="name">{{ product.name }}</p>
+        <p class="title">{{ product.type }}</p>
+        <p class="soldBy">Sold by: ELCINCO INC</p>
+        <div class="priceDetail">
+          <span class="price"> {{ product.price | currency: "Rs. " }}</span>
+          <span class="oldPrice">{{
+            product.oldPrice | currency: "Rs. "
+          }}</span>
+          <span class="offer">({{ product.offer }})</span>
+        </div>
+        <p class="deliveryby">
+          <i class="material-icons">check</i> Delivery By
+          <span>15 Oct 2021</span>
+        </p>
+        <button class="remove" (click)="remove(product.id)">Remove</button>
+      </div>
+    </div>
+  </div>
+  <div class="priceDetails">Price Calculation</div>
+</div>
+
+<button (click)="gotoMainPage()" class="router">
+  <span class="material-icons"> reply </span>
+</button>
+
+<div class="noItem" *ngIf="!products.length">
+  <h3>Add Some Items to Your Bag</h3>
+</div>

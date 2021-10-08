@@ -33,6 +33,6 @@ export class ProductItemComponent implements OnInit {
   }
 
   addToWishlist(){
-    this.productService.addToWishlist(this.index-1);
+    this.productService.addToWishlist(this.product.id);
   }
 }

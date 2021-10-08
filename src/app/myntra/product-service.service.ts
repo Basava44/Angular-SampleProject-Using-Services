@@ -8,7 +8,7 @@ import { Product } from './product.module';
 export class ProductServiceService {
   products: Product[] = [
     {
-      id:0,
+      id: 0,
       name: 'HRX by Hrithik Roshan',
       imgPath:
         'https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/1700871/2020/1/22/f932ae44-0fb8-4b92-b7bc-f1756253294b1579692118186-HRX-by-Hrithik-Roshan-Men-Teal-Blue-Printed-T-shirt-90515796-1.jpg',
@@ -28,7 +28,7 @@ export class ProductServiceService {
       cart: false,
     },
     {
-      id:1,
+      id: 1,
       name: 'Roadster',
       imgPath:
         'https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2308267/2018/1/29/11517216335231-Roadster-Men-Maroon-Printed-Round-Neck-T-shirt-5591517216335098-1.jpg',
@@ -47,7 +47,7 @@ export class ProductServiceService {
       cart: false,
     },
     {
-      id:2,
+      id: 2,
       name: 'Moda Rapido',
       imgPath:
         'https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2378414/2018/2/8/11518071262125-Moda-Rapido-Men-Navy-Blue-Striped-Round-Neck-T-shirt-3641518071261992-1.jpg',
@@ -65,8 +65,8 @@ export class ProductServiceService {
       cart: false,
     },
     {
-      id:3,
-      name: 'DILLINGER',
+      id: 3,
+      name: 'Dillinger',
       imgPath:
         'https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11067734/2019/12/10/34b589c2-80b9-4ad9-81ea-84333fbc46761575972548055-DILLINGER-Men-Tshirts-4071575972546110-1.jpg',
       images: [
@@ -84,7 +84,7 @@ export class ProductServiceService {
       cart: false,
     },
     {
-      id:4,
+      id: 4,
       name: 'Nautica',
       imgPath:
         'https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/13802468/2021/7/2/6bb1f38c-a242-492e-8cda-239490537be11625195868801-Nautica-Men-Tshirts-9611625195868311-1.jpg',
@@ -103,7 +103,7 @@ export class ProductServiceService {
       cart: false,
     },
     {
-      id:5,
+      id: 5,
       name: 'Nautica',
       imgPath:
         'https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/13802468/2021/7/2/6bb1f38c-a242-492e-8cda-239490537be11625195868801-Nautica-Men-Tshirts-9611625195868311-1.jpg',
@@ -122,8 +122,8 @@ export class ProductServiceService {
       cart: false,
     },
     {
-      id:6,
-      name: 'DILLINGER',
+      id: 6,
+      name: 'Dillinger',
       imgPath:
         'https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11067734/2019/12/10/34b589c2-80b9-4ad9-81ea-84333fbc46761575972548055-DILLINGER-Men-Tshirts-4071575972546110-1.jpg',
       images: [
@@ -141,7 +141,7 @@ export class ProductServiceService {
       cart: false,
     },
     {
-      id:7,
+      id: 7,
       name: 'HRX by Hrithik Roshan',
       imgPath:
         'https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/1700871/2020/1/22/f932ae44-0fb8-4b92-b7bc-f1756253294b1579692118186-HRX-by-Hrithik-Roshan-Men-Teal-Blue-Printed-T-shirt-90515796-1.jpg',
@@ -161,7 +161,7 @@ export class ProductServiceService {
       cart: false,
     },
     {
-      id:8,
+      id: 8,
       name: 'Roadster',
       imgPath:
         'https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2308267/2018/1/29/11517216335231-Roadster-Men-Maroon-Printed-Round-Neck-T-shirt-5591517216335098-1.jpg',
@@ -180,7 +180,7 @@ export class ProductServiceService {
       cart: false,
     },
     {
-      id:9,
+      id: 9,
       name: 'Moda Rapido',
       imgPath:
         'https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2378414/2018/2/8/11518071262125-Moda-Rapido-Men-Navy-Blue-Striped-Round-Neck-T-shirt-3641518071261992-1.jpg',
@@ -198,7 +198,7 @@ export class ProductServiceService {
       cart: false,
     },
     {
-      id:10,
+      id: 10,
       name: 'HRX by Hrithik Roshan',
       imgPath:
         'https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/1700871/2020/1/22/f932ae44-0fb8-4b92-b7bc-f1756253294b1579692118186-HRX-by-Hrithik-Roshan-Men-Teal-Blue-Printed-T-shirt-90515796-1.jpg',
@@ -218,7 +218,7 @@ export class ProductServiceService {
       cart: false,
     },
     {
-      id:11,
+      id: 11,
       name: 'Roadster',
       imgPath:
         'https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2308267/2018/1/29/11517216335231-Roadster-Men-Maroon-Printed-Round-Neck-T-shirt-5591517216335098-1.jpg',
@@ -237,7 +237,7 @@ export class ProductServiceService {
       cart: false,
     },
     {
-      id:12,
+      id: 12,
       name: 'Moda Rapido',
       imgPath:
         'https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2378414/2018/2/8/11518071262125-Moda-Rapido-Men-Navy-Blue-Striped-Round-Neck-T-shirt-3641518071261992-1.jpg',
@@ -255,8 +255,8 @@ export class ProductServiceService {
       cart: false,
     },
     {
-      id:13,
-      name: 'DILLINGER',
+      id: 13,
+      name: 'Dillinger',
       imgPath:
         'https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11067734/2019/12/10/34b589c2-80b9-4ad9-81ea-84333fbc46761575972548055-DILLINGER-Men-Tshirts-4071575972546110-1.jpg',
       images: [
@@ -274,7 +274,7 @@ export class ProductServiceService {
       cart: false,
     },
     {
-      id:14,
+      id: 14,
       name: 'Nautica',
       imgPath:
         'https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/13802468/2021/7/2/6bb1f38c-a242-492e-8cda-239490537be11625195868801-Nautica-Men-Tshirts-9611625195868311-1.jpg',
@@ -293,7 +293,7 @@ export class ProductServiceService {
       cart: false,
     },
     {
-      id:15,
+      id: 15,
       name: 'Nautica',
       imgPath:
         'https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/13802468/2021/7/2/6bb1f38c-a242-492e-8cda-239490537be11625195868801-Nautica-Men-Tshirts-9611625195868311-1.jpg',
@@ -312,8 +312,8 @@ export class ProductServiceService {
       cart: false,
     },
     {
-      id:16,
-      name: 'DILLINGER',
+      id: 16,
+      name: 'Dillinger',
       imgPath:
         'https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/11067734/2019/12/10/34b589c2-80b9-4ad9-81ea-84333fbc46761575972548055-DILLINGER-Men-Tshirts-4071575972546110-1.jpg',
       images: [
@@ -331,7 +331,7 @@ export class ProductServiceService {
       cart: false,
     },
     {
-      id:17,
+      id: 17,
       name: 'HRX by Hrithik Roshan',
       imgPath:
         'https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/1700871/2020/1/22/f932ae44-0fb8-4b92-b7bc-f1756253294b1579692118186-HRX-by-Hrithik-Roshan-Men-Teal-Blue-Printed-T-shirt-90515796-1.jpg',
@@ -351,7 +351,7 @@ export class ProductServiceService {
       cart: false,
     },
     {
-      id:18,
+      id: 18,
       name: 'Roadster',
       imgPath:
         'https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2308267/2018/1/29/11517216335231-Roadster-Men-Maroon-Printed-Round-Neck-T-shirt-5591517216335098-1.jpg',
@@ -370,7 +370,7 @@ export class ProductServiceService {
       cart: false,
     },
     {
-      id:19,
+      id: 19,
       name: 'Moda Rapido',
       imgPath:
         'https://assets.myntassets.com/h_1440,q_90,w_1080/v1/assets/images/2378414/2018/2/8/11518071262125-Moda-Rapido-Men-Navy-Blue-Striped-Round-Neck-T-shirt-3641518071261992-1.jpg',
@@ -403,13 +403,12 @@ export class ProductServiceService {
 
   cart: Product[] = [];
 
-  addToWishlist(index: number){
+  addToWishlist(index: number) {
     this.products[index].wishlist = !this.products[index].wishlist;
   }
 
-  addToCart(index: number){
+  addToCart(index: number) {
     this.products[index].cart = !this.products[index].cart;
+    this.cart.push(this.products[index]);
   }
-
-
 }

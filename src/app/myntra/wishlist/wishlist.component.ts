@@ -11,24 +11,24 @@ import { Product } from '../product.module';
 export class WishlistComponent implements OnInit {
   constructor(
     private productService: ProductServiceService,
-    private router: Router,
+    private router: Router
   ) {}
 
-  products: Product[]=[];
+  products: Product[] = [];
 
   ngOnInit(): void {
-    this.products=[];
-    this.productService.products.map(
-      (data:Product) => {
-        if(data.wishlist)
-          this.products.push(data);
-      }
-    )
+    this.products = [];
+    this.productService.products.map((data: Product) => {
+      if (data.wishlist) this.products.push(data);
+    });
   }
 
-  remove(id: number){
+  remove(id: number) {
     this.productService.addToWishlist(id);
     this.ngOnInit();
   }
 
+  gotoMainPage(){
+    this.router.navigate(['/myntra']);
+  }
 }

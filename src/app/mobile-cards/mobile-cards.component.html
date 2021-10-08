@@ -3,16 +3,24 @@
   <app-header></app-header>
   <form class="filterWrapper" (ngSubmit)="onSearch()" autocomplete="off">
     <h5>Search Items</h5>
-    <input type="text" [(ngModel)]="data" placeholder="Search Item" #searchBar name="input">
-    <button type="submit">{{search? 'Cancel': 'Search'}}</button>
-    <p *ngIf="search && data.length < 2" class="caution">Please Enter More Characters</p>
+    <input
+      type="text"
+      [(ngModel)]="data"
+      placeholder="Search Item"
+      #searchBar
+      name="input"
+    />
+    <button type="submit">{{ search ? "Cancel" : "Search" }}</button>
+    <p *ngIf="search && data.length < 2" class="caution">
+      Please Enter More Characters
+    </p>
   </form>
   <app-count #me></app-count>
-  <p *ngIf="searchCount==0">No Cards</p>
+  <p *ngIf="searchCount == 0">No Cards</p>
   <div class="cardContainer">
     <app-mobile-card
-        *ngFor="let device of devices | filter:data:search"
-        [mobileData] = device
+      *ngFor="let device of devices | filter: data:search"
+      [mobileData]="device"
     ></app-mobile-card>
   </div>
 </div>

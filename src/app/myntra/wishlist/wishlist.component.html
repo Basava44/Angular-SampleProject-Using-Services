@@ -1,18 +1,31 @@
-<div class="wishlistWrapper">
-  <div class="card" *ngFor="let product of products">
-    <button class="close" (click)="remove(product.id)">&times;</button>
-    <img [src]="product.imgPath" alt="{{ product.name }}" />
-    <div class="priceDetail">
-      <span class="price"> {{ product.price | currency: "Rs. " }}</span>
-      <span class="oldPrice">{{ product.oldPrice | currency: "Rs. " }}</span>
-      <span class="offer">({{ product.offer }})</span>
+<div class="Wishlist">
+  <div class="Wishlist__card" *ngFor="let product of products">
+    <button class="Wishlist__card__close" (click)="remove(product.id)">
+      &times;
+    </button>
+    <img class="Wishlist__card__image" [src]="product.imgPath" alt="{{ product.name }}" />
+    <div class="Wishlist__card__title">{{ product.name }}</div>
+    <div class="Wishlist__card__price-details">
+      <span class="Wishlist__card__price-details__price">
+        {{ product.price | currency: "Rs. " }}</span
+      >
+      <span class="Wishlist__card__price-details__old-price">{{
+        product.oldPrice | currency: "Rs. "
+      }}</span>
+      <span class="Wishlist__card__price-details__offer"
+        >({{ product.offer }})</span
+      >
     </div>
-    <div class="button">
-      <p>MOVE TO BAG</p>
+    <div class="Wishlist__card__button">
+      <p class="Wishlist__card__button__content">MOVE TO BAG</p>
     </div>
   </div>
 </div>
 
 <div class="noItem" *ngIf="!products.length">
-    <h2>Add some Items to Your Wishlist</h2>
+  <h3>Add some Items to Your Wishlist</h3>
 </div>
+
+<button (click)="gotoMainPage()" class="router">
+  <span class="material-icons"> reply </span>
+</button>

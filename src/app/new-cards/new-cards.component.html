@@ -72,7 +72,7 @@
   </div>
   <div class="mobileWrapper">
     <div class="mobileArray" *ngIf="devices.length">
-      <app-card
+      <app-card 
         *ngFor="let mobile of devices | filter: data:search"
         [deviceData]="mobile"
         class="mobileCard"
