@@ -1,17 +1,54 @@
-<div class="bag">
-  <div (click)="goToWishlist()">
-    <p><i class="material-icons" style="color: #ff3f6c">favorite_border</i></p>
-    <p>Wishlist</p>
+<nav class="navbar">
+  <div class="navbar__label">
+    <ul class="navbar__label__menu">
+      <img
+        class="navbar__label__menu_image"
+        src="../../assets/myntra logo.png"
+        routerLink="/myntra"
+      />
+      <li
+        class="navbar__label__menu__item"
+        (mouseover)="openList('men')"
+  
+      >
+        MEN
+      </li>
+      <li
+        class="navbar__label__menu__item"
+        (mouseover)="openList('women')"
+  
+      >
+        WOMEN
+      </li>
+      <li
+        class="navbar__label__menu__item"
+        (mouseover)="openList('kids')"
+  
+      >
+        KIDS
+      </li>
+    </ul>
   </div>
-  <div (click)="goToBag()">
-    <p><i class="material-icons" style="color: #ff3f6c">shopping_bag</i></p>
-    <p>Bag</p>
+  <div class="navbar__action">
+    <div class="Bag">
+      <div (click)="goToWishlist()" class="Bag__container">
+        <p>
+          <i class="material-icons" style="color: #ff3f6c">favorite_border</i>
+        </p>
+        <p>Wishlist</p>
+      </div>
+      <div (click)="goToBag()" class="Bag__container">
+        <p><i class="material-icons" style="color: #ff3f6c">shopping_bag</i></p>
+        <p>Bag</p>
+      </div>
+    </div>
   </div>
-</div>
-<div class="products">
-  <app-product-item
-    *ngFor="let product of products; let i = index"
-    [product]="product"
-    [index]="i + 1"
-  ></app-product-item>
-</div>
+</nav>
+<app-list
+  *ngIf="showList"
+  (mouseover)="open()"
+  (mouseout)="closeList()"
+  [data]="listData"
+></app-list>
+
+<router-outlet></router-outlet>

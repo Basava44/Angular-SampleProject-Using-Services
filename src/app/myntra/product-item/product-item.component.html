@@ -1,29 +1,30 @@
 <div
-  class="item"
+  class="Product"
   title="{{ product.name + ' ' + product.type }}"
   (mouseover)="mouseHover()"
   (mouseout)="mouseOut()"
 >
   <img
+    class="Product__image"
     [src]="product.imgPath"
     alt="{{ product.name }}"
     (click)="productPreview()"
   />
-  <div class="details">
+  <div class="Product__details">
     <span
-      class="productAction"
+      class="Product__details__product-action"
       *ngIf="hover"
       [class.wishlist]="product.wishlist"
       (click)="addToWishlist()"
       >&hearts; wishlist</span
     >
-    <h3 class="productName" *ngIf="!hover">{{ product.name }}</h3>
-    <span class="productSizes" *ngIf="hover">Sizes: S,M,L,XL,XXL</span>
-    <h4 class="productType" *ngIf="!hover">{{ product.type }}</h4>
-    <div class="priceDetail">
-      <span class="price"> {{ product.price | currency: "Rs. " }}</span>
-      <span class="oldPrice">{{ product.oldPrice | currency: "Rs. " }}</span>
-      <span class="offer">({{ product.offer }})</span>
+    <h3 class="Product__details__product-name" *ngIf="!hover">{{ product.name }}</h3>
+    <span class="Product__details__product-sizes" *ngIf="hover">Sizes: S,M,L,XL,XXL</span>
+    <h4 class="Product__details__product-type" *ngIf="!hover">{{ product.type }}</h4>
+    <div class="Product__details__price-details">
+      <span class="Product__details__price-details__price"> {{ product.price | currency: "Rs. " }}</span>
+      <span class="Product__details__price-details__old-price">{{ product.oldPrice | currency: "Rs. " }}</span>
+      <span class="Product__details__price-details__offer">({{ product.offer }})</span>
     </div>
   </div>
 </div>

@@ -1,33 +1,18 @@
 <nav class="navbar">
   <h1><a routerLink="/" title="Mobile Store">Mobile Store</a></h1>
   <ul>
-    <li
-      routerLinkActive="active"
-      [routerLinkActiveOptions]="{exact:true}"
-    >
+    <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
       <a routerLink="/cards" title="Home">Home</a>
     </li>
-    <li
-      routerLinkActive="active"
-    >
+    <li routerLinkActive="active">
       <a routerLink="/addmobile" title="Add New Mobile">Add Mobile</a>
     </li>
-    <li
-      routerLinkActive="active"
-    >
+    <li routerLinkActive="active">
       <a routerLink="/newWindow" title="New Window">Mobiles</a>
     </li>
-    <li
-      routerLinkActive="active myntra"
-    >
+    <li routerLinkActive="active myntra">
       <a routerLink="/myntra" title="Myntra">Myntra</a>
     </li>
   </ul>
 </nav>
 <router-outlet></router-outlet>
-<!-- <button (click)="animate()">Animate</button>
-<button (click)="shrink()">Shrink</button>
-<div [@divState]="state" style="width: 100px; height: 100px;"></div>
-<br>
-<div [@wildState]="wildState" style="width: 100px; height: 100px;"></div> -->
-

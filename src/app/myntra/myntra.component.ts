@@ -1,33 +1,35 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ProductServiceService } from './product-service.service';
-import { Product } from './product.module';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-myntra',
   templateUrl: './myntra.component.html',
   styleUrls: ['./myntra.component.scss'],
 })
-export class MyntraComponent implements OnInit {
-  constructor(
-    private productService: ProductServiceService,
-    private router: Router,
-    private route: ActivatedRoute,
-  ) {}
+export class MyntraComponent {
+  constructor(private router: Router, private route: ActivatedRoute) {}
 
-  products: Product[] = [];
-
-  ngOnInit(): void {
-    this.products = this.productService.getProducts();
-    this.productService.updateProducts.subscribe((data) => {
-      console.log(data[0]);
-    });
-  }
+  showList: boolean = false;
+  listData!: string;
 
   goToWishlist() {
-    this.router.navigate(['wishlist'],{relativeTo: this.route})
+    this.router.navigate(['wishlist'], { relativeTo: this.route });
   }
-  goToBag(){
+  goToBag() {
     this.router.navigate(['bag'], { relativeTo: this.route });
+  }
+
+  openList(type: string) {
+    this.listData = type;
+    this.showList = true;
+  }
+
+  open(){
+    // this.showList = true;
+  }
+
+  closeList() {
+    this.showList = false;
   }
 }

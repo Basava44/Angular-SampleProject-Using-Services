@@ -3,7 +3,7 @@ import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { CountComponent } from './mobile-cards/count/count.component';
@@ -24,6 +24,10 @@ import { ProductItemComponent } from './myntra/product-item/product-item.compone
 import { ProductDisplayComponent } from './myntra/product-display/product-display.component';
 import { BagComponent } from './myntra/bag/bag.component';
 import { WishlistComponent } from './myntra/wishlist/wishlist.component';
+import { ProductsComponent } from './myntra/products/products.component';
+import { ListComponent } from './myntra/list/list.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/newWindow', pathMatch: 'full' },
@@ -31,10 +35,17 @@ const appRoutes: Routes = [
   { path: 'addmobile', component: AddMobileComponent },
   { path: 'newWindow', component: NewCardsComponent },
   { path: 'newWindow/compare', component: ComparisonPageComponent },
-  { path: 'myntra', component: MyntraComponent },
-  { path: 'myntra/product/:id', component: ProductDisplayComponent },
-  { path: 'myntra/bag', component: BagComponent },
-  { path: 'myntra/wishlist', component: WishlistComponent },
+  {
+    path: 'myntra',
+    component: MyntraComponent,
+    children: [
+      { path: '', component: ProductsComponent },
+      { path: 'product/:id', component: ProductDisplayComponent },
+      { path: 'bag', component: BagComponent },
+      { path: 'wishlist', component: WishlistComponent },
+    ],
+  },
+  { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({
@@ -57,7 +68,11 @@ const appRoutes: Routes = [
     ProductItemComponent,
     ProductDisplayComponent,
     BagComponent,
-    WishlistComponent
+    WishlistComponent,
+    ProductsComponent,
+    ListComponent,
+    PageNotFoundComponent,
+    ReactiveFormsComponent,
   ],
   imports: [
     BrowserModule,

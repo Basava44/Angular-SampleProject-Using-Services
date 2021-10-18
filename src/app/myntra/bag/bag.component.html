@@ -1,30 +1,30 @@
-<div class="bagWrapper" *ngIf="products.length">
-  <div class="mainTitle">Your Products:</div>
-  <div class="products" >
-    <div class="productDetails" *ngFor="let product of products">
-      <div class="image">
-        <img [src]="product.imgPath" alt="{{ product.name }}" />
+<div class="Bag" *ngIf="products.length">
+  <div class="Bag__main-title">Your Products:</div>
+  <div class="Bag__products" >
+    <div class="Bag__products__product-details" *ngFor="let product of products">
+      <div>
+        <img class="Bag__products__product-details__image" [src]="product.imgPath" alt="{{ product.name }}" />
       </div>
-      <div class="details">
-        <p class="name">{{ product.name }}</p>
-        <p class="title">{{ product.type }}</p>
-        <p class="soldBy">Sold by: ELCINCO INC</p>
-        <div class="priceDetail">
-          <span class="price"> {{ product.price | currency: "Rs. " }}</span>
-          <span class="oldPrice">{{
+      <div class="Bag__products__product-details__details">
+        <p class="Bag__products__product-details__details__name">{{ product.name }}</p>
+        <p class="Bag__products__product-details__details__title">{{ product.type }}</p>
+        <p class="Bag__products__product-details__details__sold-by">Sold by: ELCINCO INC</p>
+        <div class="Bag__products__product-details__details__price-details">
+          <span class="Bag__products__product-details__details__price-details__price"> {{ product.price | currency: "Rs. " }}</span>
+          <span class="Bag__products__product-details__details__price-details__old-price">{{
             product.oldPrice | currency: "Rs. "
           }}</span>
-          <span class="offer">({{ product.offer }})</span>
+          <span class="Bag__products__product-details__details__price-details__offer">({{ product.offer }})</span>
         </div>
-        <p class="deliveryby">
+        <p class="Bag__products__product-details__details__deliveryby">
           <i class="material-icons">check</i> Delivery By
-          <span>15 Oct 2021</span>
+          <span class="Bag__products__product-details__details__deliveryby__content">15 Oct 2021</span>
         </p>
-        <button class="remove" (click)="remove(product.id)">Remove</button>
+        <button class="Bag__products__product-details__details__remove" (click)="remove(product.id)">Remove</button>
       </div>
     </div>
   </div>
-  <div class="priceDetails">Price Calculation</div>
+  <div class="Bag_price-calculation">Price Calculation</div>
 </div>
 
 <button (click)="gotoMainPage()" class="router">

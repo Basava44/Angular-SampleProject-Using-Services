@@ -72,6 +72,9 @@ export class AppComponent implements OnInit {
   //   this.wildState = 'shrunken';
   // }
 
+  download: boolean = false;
+  print: boolean = false;
+
   ngOnInit() {
     this.mobileData.show.subscribe((data) => (this.show = data));
   }
